@@ -64,7 +64,7 @@ html.darkmode body {
 
 #lastc,
 #board-home-link-btn,
-.reply>a {
+.reply > a {
     color: var(--color-sig) !important
 }
 
@@ -103,7 +103,7 @@ p a[href] {
 }
 
 .fr-sticky-on+.fr-sticky-dummy,
-.fr-sticky-box>.fr-sticky-dummy {
+.fr-sticky-box > .fr-sticky-dummy {
     display: none !important
 }
 
@@ -111,7 +111,7 @@ header {
     padding: 0
 }
 
-body>header:before {
+body > header:before {
     content: '';
     position: absolute;
     top: 0;
@@ -128,14 +128,14 @@ body>header:before {
     --logo-pd: var(--logo-pdw) var(--logo-pdh) var(--logo-pdw) 0
 }
 
-header .row>div:nth-child(1)>a>img {
+header .row > div:nth-child(1) > a > img {
     content: url(https://cdn.discordapp.com/attachments/901132800793649233/936304107487129610/tgd_ico.png);
     width: 120px;
     height: 50px;
     padding: var(--logo-pd)
 }
 
-header .row>div:nth-child(1)>a::after {
+header .row > div:nth-child(1) > a::after {
     content: '트게더';
     position: absolute;
     font-size: 20px;
@@ -145,13 +145,13 @@ header .row>div:nth-child(1)>a::after {
     left: calc(15px + calc(50px - var(--logo-pdw) * 2) + 5px)
 }
 
-header .row>div:nth-child(1)>a:hover::after,
-header .row>div:nth-child(1)>a:focus::after {
+header .row > div:nth-child(1) > a:hover::after,
+header .row > div:nth-child(1) > a:focus::after {
     content: '메인으로'
 }
 
-body>header>div:nth-child(1)>div>div.col-xs-4,
-body>header>div:nth-child(1)>div>div.col-xs-8 {
+body > header > div:nth-child(1) > div > div.col-xs-4,
+body > header > div:nth-child(1) > div > div.col-xs-8 {
     line-height: initial;
     height: 50px
 }
@@ -190,13 +190,13 @@ header #right-search-btn {
     padding: 0
 }
 
-header #right-search-btn>i {
+header #right-search-btn > i {
     display: block;
     font-size: 20px !important;
     color: #fff
 }
 
-header #right-search-form>#right-search-input {
+header #right-search-form > #right-search-input {
     width: 0;
     height: 30px;
     padding: 0;
@@ -212,12 +212,12 @@ header #right-search-form>#right-search-input {
     transition: width .3s .05s ease-out, opacity .4s ease-in-out
 }
 
-header #right-search-form>#right-search-input::placeholder {
+header #right-search-form > #right-search-input::placeholder {
     color: rgba(255, 255, 255, 60%) !important
 }
 
-header #right-search-form:hover>#right-search-input,
-header #right-search-form>#right-search-input:focus {
+header #right-search-form:hover > #right-search-input,
+header #right-search-form > #right-search-input:focus {
     width: 150px;
     opacity: 1
 }
@@ -236,7 +236,7 @@ header #header-bar {
     align-items: center
 }
 
-header #header-bar>.row {
+header #header-bar > .row {
     display: flex;
     justify-content: center;
     width: 700px;
@@ -275,16 +275,16 @@ header #header-bar>.row {
     font-size: 0
 }
 
-#latestDropdown>i,
-#favoriteDropdown>i,
-#playgroundDropdown>i,
+#latestDropdown > i,
+#favoriteDropdown > i,
+#playgroundDropdown > i,
 .fa-envelope-o,
-#userDropdown>img,
-#latestDropdown>span,
-#favoriteDropdown>span,
-#playgroundDropdown>span,
-#userDropdown>span.caret,
-#header-menu-right>div:nth-child(1)>a>span.caret {
+#userDropdown > img,
+#latestDropdown > span,
+#favoriteDropdown > span,
+#playgroundDropdown > span,
+#userDropdown > span.caret,
+#header-menu-right > div:nth-child(1) > a > span.caret {
     display: none
 }
 
@@ -345,7 +345,7 @@ header #header-bar>.row {
     top: -1px
 }
 
-#userDropdown>i:after {
+#userDropdown > i:after {
     content: ' \f235';
     font-size: 14px;
     font-family: 'fontawesome';
@@ -364,7 +364,7 @@ header #header-bar>.row {
     }
 }
 
-body>header {
+body > header {
     height: 290px;
     min-width: 1100px;
     z-index: 103;
@@ -391,23 +391,23 @@ header::after {
     border: 1px solid var(--color-sig) !important
 }
 
-#main .menu-wrapper>.header,
-html.darkmode #main .menu-wrapper>.header {
+#main .menu-wrapper > .header,
+html.darkmode #main .menu-wrapper > .header {
     background: var(--color-sig)
 }
 
-#main .menu-wrapper>a,
-#main .menu-wrapper #fav-shortcut-area>a,
-html.darkmode #main .menu-wrapper>a,
-html.darkmode #main .menu-wrapper #fav-shortcut-area>a {
+#main .menu-wrapper > a,
+#main .menu-wrapper #fav-shortcut-area > a,
+html.darkmode #main .menu-wrapper > a,
+html.darkmode #main .menu-wrapper #fav-shortcut-area > a {
     background: transparent;
     border-bottom: none;
     padding: .35em .5em;
     letter-spacing: -.04em
 }
 
-#main .menu-wrapper>a:hover,
-#main .menu-wrapper>a:focus {
+#main .menu-wrapper > a:hover,
+#main .menu-wrapper > a:focus {
     background-color: var(--color-hov) !important
 }
 
@@ -417,46 +417,46 @@ html.darkmode #main .menu-wrapper .spacer {
     height: 1px
 }
 
-#main .menu-wrapper>a>em,
-#main .menu-wrapper #fav-shortcut-area>a>em,
-html.darkmode #main .menu-wrapper>a>em,
-html.darkmode #main .menu-wrapper #fav-shortcut-area>a>em {
+#main .menu-wrapper > a > em,
+#main .menu-wrapper #fav-shortcut-area > a > em,
+html.darkmode #main .menu-wrapper > a > em,
+html.darkmode #main .menu-wrapper #fav-shortcut-area > a > em {
     color: var(--color-sig)
 }
 
-#main .menu-wrapper #fav-shortcut-area>a,
-html.darkmode #main .menu-wrapper #fav-shortcut-area>a {
+#main .menu-wrapper #fav-shortcut-area > a,
+html.darkmode #main .menu-wrapper #fav-shortcut-area > a {
     background: var(--color-pla);
     color: #fff;
     border: 0
 }
 
-#fav-shortcut-area>a>em>i {
+#fav-shortcut-area > a > em > i {
     width: 20px;
     color: #fff !important
 }
 
-#main .menu-wrapper #fav-shortcut-area>a:hover,
-#main .menu-wrapper #fav-shortcut-area>a:focus,
-html.darkmode #main .menu-wrapper #fav-shortcut-area>a:hover,
-html.darkmode #main .menu-wrapper #fav-shortcut-area>a:focus {
+#main .menu-wrapper #fav-shortcut-area > a:hover,
+#main .menu-wrapper #fav-shortcut-area > a:focus,
+html.darkmode #main .menu-wrapper #fav-shortcut-area > a:hover,
+html.darkmode #main .menu-wrapper #fav-shortcut-area > a:focus {
     background: var(--color-sig)
 }
 
-#article-list>div:nth-child(3):not(#article-list>.article-list-row, #article-list-menu),
-html.darkmode #article-list>div:nth-child(3):not(#article-list>.article-list-row, #article-list-menu) {
+#article-list > div:nth-child(3):not(#article-list > .article-list-row, #article-list-menu),
+html.darkmode #article-list > div:nth-child(3):not(#article-list > .article-list-row, #article-list-menu) {
     width: 844px;
     background: var(--color-noti) !important;
     width: 100%;
     border: none
 }
 
-#main-content>div>div:nth-child(2):not(#article-list) {
+#main-content > div > div:nth-child(2):not(#article-list) {
     background: var(--color-noti) !important;
     padding: 10px 8px !important
 }
 
-#main-content>div>div:nth-child(2)>div:not(#article-list-category, .article-list-table-gallery, #article-list-menu) {
+#main-content > div > div:nth-child(2) > div:not(#article-list-category, .article-list-table-gallery, #article-list-menu) {
     background: var(--color-noti) !important
 }
 
@@ -464,7 +464,7 @@ html.darkmode #article-list>div:nth-child(3):not(#article-list>.article-list-row
     background: var(--color-noti) !important
 }
 
-#content-area>.container:not(#main) {
+#content-area > .container:not(#main) {
     position: fixed;
     z-index: 3;
     top: -1px;
@@ -476,7 +476,7 @@ html.darkmode #article-list>div:nth-child(3):not(#article-list>.article-list-row
     border-radius: 0 0 20px 20px
 }
 
-#main-content>div.frame {
+#main-content > div.frame {
     border: 1px solid var(--color-sig) !important;
     background: var(--color-fr) !important
 }
@@ -486,122 +486,122 @@ html.darkmode #article-list>div:nth-child(3):not(#article-list>.article-list-row
     padding: 15px
 }
 
-#article-list>.article-list-row>.item>.list-title>a:visited {
+#article-list > .article-list-row > .item > .list-title > a:visited {
     color: #acacac !important
 }
 
-#article-list>.article-list-row>.item>.list-header>span,
-html.darkmode #article-list>.article-list-row>.item>.list-header>span {
+#article-list > .article-list-row > .item > .list-header > span,
+html.darkmode #article-list > .article-list-row > .item > .list-header > span {
     color: var(--color-sig);
     background: transparent !important;
     font-size: 14px
 }
 
-#article-list>.article-list-row>.item>.list-header.v0>span {
+#article-list > .article-list-row > .item > .list-header.v0 > span {
     visibility: hidden
 }
 
-#article-list>.article-list-row>.item>.list-title>small.comment-count,
-html.darkmode #article-list>.article-list-row>.item>.list-title>small.comment-count {
+#article-list > .article-list-row > .item > .list-title > small.comment-count,
+html.darkmode #article-list > .article-list-row > .item > .list-title > small.comment-count {
     color: var(--color-sig)
 }
 
-#article-list>.article-list-row>.item>.list-title>.list-writer {
+#article-list > .article-list-row > .item > .list-title > .list-writer {
     padding: 0 16px;
     border-left: none !important
 }
 
-#article-list>.article-list-row>.item>.list-title>.list-writer>span {
+#article-list > .article-list-row > .item > .list-title > .list-writer > span {
     width: fit-content !important;
     height: 18px
 }
 
-#article-list>.article-list-row>.item>.list-title>.list-writer.logged>span,
-html.darkmode #article-list>.article-list-row>.item>.list-title>.list-writer.logged>span {
+#article-list > .article-list-row > .item > .list-title > .list-writer.logged > span,
+html.darkmode #article-list > .article-list-row > .item > .list-title > .list-writer.logged > span {
     color: var(--color-sig)
 }
 
-#article-list>.article-list-row,
-html.darkmode #article-list>.article-list-row {
+#article-list > .article-list-row,
+html.darkmode #article-list > .article-list-row {
     border: none !important;
     transition: .2s
 }
 
-#article-list>.article-list-row>.item>.list-header {
+#article-list > .article-list-row > .item > .list-header {
     border-left: none !important
 }
 
-#article-list>.article-list-row>.item>.list-checkbox,
-#article-list>.article-list-row>.item>.list-header,
-#article-list>.article-list-row>.item>.list-category,
-#article-list>.article-list-row>.item>.list-title,
-#article-list>.article-list-row>.item>.list-title>.list-category,
-#article-list>.article-list-row>.item>.list-title>.list-writer,
-#article-list>.article-list-row>.item>.list-blocked,
-#article-list>.article-list-row>.item>.list-time {
+#article-list > .article-list-row > .item > .list-checkbox,
+#article-list > .article-list-row > .item > .list-header,
+#article-list > .article-list-row > .item > .list-category,
+#article-list > .article-list-row > .item > .list-title,
+#article-list > .article-list-row > .item > .list-title > .list-category,
+#article-list > .article-list-row > .item > .list-title > .list-writer,
+#article-list > .article-list-row > .item > .list-blocked,
+#article-list > .article-list-row > .item > .list-time {
     border-color: var(--color-hot) !important
 }
 
-#article-list>.article-list-row.active,
-html.darkmode #article-list>.article-list-row.active {
+#article-list > .article-list-row.active,
+html.darkmode #article-list > .article-list-row.active {
     background-color: var(--color-hot)
 }
 
-#article-list>.article-list-row:hover,
-#article-list>.article-list-row:focus,
-html.darkmode #article-list>.article-list-row:hover,
-html.darkmode #article-list>.article-list-row:focus {
+#article-list > .article-list-row:hover,
+#article-list > .article-list-row:focus,
+html.darkmode #article-list > .article-list-row:hover,
+html.darkmode #article-list > .article-list-row:focus {
     background-color: var(--color-hov) !important;
     transition: .2s
 }
 
-#article-list>.article-list-row.notice>.item>.list-header>strong,
-#article-list>.article-list-row.hot>.item>.list-header>strong,
-#article-list>.article-list-row.notice>.item>.list-header>b,
-#article-list>.article-list-row.hot>.item>.list-header>b {
+#article-list > .article-list-row.notice > .item > .list-header > strong,
+#article-list > .article-list-row.hot > .item > .list-header > strong,
+#article-list > .article-list-row.notice > .item > .list-header > b,
+#article-list > .article-list-row.hot > .item > .list-header > b {
     font-size: 0
 }
 
-#article-list>.article-list-row.notice>.item>.list-header>strong:after,
-#article-list>.article-list-row.notice>.item>.list-header>b:after {
+#article-list > .article-list-row.notice > .item > .list-header > strong:after,
+#article-list > .article-list-row.notice > .item > .list-header > b:after {
     font-family: 'fontawesome';
     font-size: 14px;
     color: var(--color-sig);
     content: '\f08d'
 }
 
-#article-list>.article-list-row.hot>.item>.list-header>strong:after,
-#article-list>.article-list-row.hot>.item>.list-header>b:after {
+#article-list > .article-list-row.hot > .item > .list-header > strong:after,
+#article-list > .article-list-row.hot > .item > .list-header > b:after {
     font-family: 'fontawesome';
     font-size: 13px;
     color: #efc839;
     content: '\f005'
 }
 
-#article-list>.article-list-row.notice,
-html.darkmode #article-list>.article-list-row.notice {
+#article-list > .article-list-row.notice,
+html.darkmode #article-list > .article-list-row.notice {
     background-color: var(--color-noti)
 }
 
-#article-list>.article-list-row.notice>.item>.list-title>small.comment-count,
-#article-list>.article-list-row.notice>.item>.list-title>.list-writer {
+#article-list > .article-list-row.notice > .item > .list-title > small.comment-count,
+#article-list > .article-list-row.notice > .item > .list-title > .list-writer {
     display: none
 }
 
-#article-list>.article-list-row.notice>.item>.list-checkbox,
-#article-list>.article-list-row.notice>.item>.list-header,
-#article-list>.article-list-row.notice>.item>.list-category,
-#article-list>.article-list-row.notice>.item>.list-title,
-#article-list>.article-list-row.notice>.item>.list-blocked,
-#article-list>.article-list-row.notice>.item>.list-time {
+#article-list > .article-list-row.notice > .item > .list-checkbox,
+#article-list > .article-list-row.notice > .item > .list-header,
+#article-list > .article-list-row.notice > .item > .list-category,
+#article-list > .article-list-row.notice > .item > .list-title,
+#article-list > .article-list-row.notice > .item > .list-blocked,
+#article-list > .article-list-row.notice > .item > .list-time {
     border-bottom: none !important
 }
 
-#article-list>.article-list-row.notice>.item>.list-title {
+#article-list > .article-list-row.notice > .item > .list-title {
     padding: 5px 0
 }
 
-#article-list>.article-list-row.notice .list-title>span>i:before {
+#article-list > .article-list-row.notice .list-title > span > i:before {
     content: "공지";
     font-family: 'Pretendard Variable';
     font-size: 13px;
@@ -612,11 +612,11 @@ html.darkmode #article-list>.article-list-row.notice {
     padding: 0 4px
 }
 
-#article-list>.article-list-row.notice>div>div.list-title>span.a-badge {
+#article-list > .article-list-row.notice > div > div.list-title > span.a-badge {
     display: none
 }
 
-#article-list>.article-list-row.notice>.item>.list-time {
+#article-list > .article-list-row.notice > .item > .list-time {
     font-family: 'Pretendard Variable';
     font-size: 12px;
     line-height: 19px;
@@ -630,13 +630,13 @@ html.darkmode #article-list>.article-list-row.notice {
     color: #fff
 }
 
-#article-list>.article-list-row.notice>.item>.list-time:after {
+#article-list > .article-list-row.notice > .item > .list-time:after {
     content: "\f017";
     font-family: 'fontawesome'
 }
 
-#article-list>.article-list-row.hot,
-html.darkmode #article-list>.article-list-row.hot {
+#article-list > .article-list-row.hot,
+html.darkmode #article-list > .article-list-row.hot {
     background-color: var(--color-hot)
 }
 
@@ -644,7 +644,7 @@ html.darkmode #article-list>.article-list-row.hot {
     z-index: 1
 }
 
-#article-list #article-option-area>#article-option-area-toggle-btn {
+#article-list #article-option-area > #article-option-area-toggle-btn {
     width: 25px;
     height: 25px;
     margin: 5px 5px 0 0;
@@ -654,11 +654,11 @@ html.darkmode #article-list>.article-list-row.hot {
     border: 1px solid
 }
 
-#article-option-area-toggle-btn>.fa-eye:before {
+#article-option-area-toggle-btn > .fa-eye:before {
     content: "\f205"
 }
 
-#article-option-area-toggle-btn>.fa-eye-slash:before {
+#article-option-area-toggle-btn > .fa-eye-slash:before {
     content: "\f204"
 }
 
@@ -666,9 +666,9 @@ html.darkmode #article-list>.article-list-row.hot {
     height: 34px
 }
 
-#article-list #article-list-category>a.active,
-#article-list #article-list-category>a:hover,
-#article-list #article-list-category>a:focus {
+#article-list #article-list-category > a.active,
+#article-list #article-list-category > a:hover,
+#article-list #article-list-category > a:focus {
     background: var(--color-sig) !important;
     color: #fff !important;
     transition: all .2s ease-in-out
@@ -682,8 +682,8 @@ html.darkmode #article-list #article-list-category {
     height: fit-content
 }
 
-#article-list #article-list-category>a,
-html.darkmode #article-list #article-list-category>a {
+#article-list #article-list-category > a,
+html.darkmode #article-list #article-list-category > a {
     background: var(--color-fr);
     border: none !important
 }
@@ -711,8 +711,8 @@ html.darkmode #article-list #article-list-category>a {
         overflow-y: auto
     }
 
-    #article-list #article-list-category.can-float>a,
-    html.darkmode #article-list #article-list-category.can-float>a {
+    #article-list #article-list-category.can-float > a,
+    html.darkmode #article-list #article-list-category.can-float > a {
         width: 85%;
         padding: 10px;
         border: 0;
@@ -724,30 +724,30 @@ html.darkmode #article-list #article-list-category>a {
         border-right: 4px solid !important
     }
 
-    #article-list #article-list-category.can-float>a:first-child {
+    #article-list #article-list-category.can-float > a:first-child {
         border-top: 1px solid var(--color-sig) !important
     }
 
-    #article-list #article-list-category.can-float>a:last-child {
+    #article-list #article-list-category.can-float > a:last-child {
         border-bottom: 1px solid var(--color-sig) !important
     }
 
-    #article-list #article-list-category.can-float>a[id=board-home-link-btn],
-    html.darkmode #article-list #article-list-category.can-float>a[id=board-home-link-btn] {
+    #article-list #article-list-category.can-float > a[id=board-home-link-btn],
+    html.darkmode #article-list #article-list-category.can-float > a[id=board-home-link-btn] {
         background: var(--color-sig) !important;
         color: #fff !important;
         border-right: 4px solid var(--color-sig) !important;
         width: 100%
     }
 
-    #article-list #article-list-category.can-float>a.active,
-    #article-list #article-list-category.can-float>a.active[id=board-home-link-btn],
-    #article-list #article-list-category.can-float>a:hover,
-    #article-list #article-list-category.can-float>a:focus,
-    html.darkmode #article-list #article-list-category.can-float>a.active,
-    html.darkmode #article-list #article-list-category.can-float>a.active[id=board-home-link-btn],
-    html.darkmode #article-list #article-list-category.can-float>a:hover,
-    html.darkmode #article-list #article-list-category.can-float>a:focus {
+    #article-list #article-list-category.can-float > a.active,
+    #article-list #article-list-category.can-float > a.active[id=board-home-link-btn],
+    #article-list #article-list-category.can-float > a:hover,
+    #article-list #article-list-category.can-float > a:focus,
+    html.darkmode #article-list #article-list-category.can-float > a.active,
+    html.darkmode #article-list #article-list-category.can-float > a.active[id=board-home-link-btn],
+    html.darkmode #article-list #article-list-category.can-float > a:hover,
+    html.darkmode #article-list #article-list-category.can-float > a:focus {
         background: var(--color-sig) !important;
         width: 100%;
         color: #fff !important;
@@ -760,10 +760,10 @@ html.darkmode #article-list #article-list-category>a {
     border-radius: 0
 }
 
-.pagination>li>a,
-.pagination>li>span,
-html.darkmode .pagination>li>a,
-html.darkmode .pagination>li>span {
+.pagination > li > a,
+.pagination > li > span,
+html.darkmode .pagination > li > a,
+html.darkmode .pagination > li > span {
     border: 0 !important;
     border-top: 1px solid var(--color-sig) !important;
     border-bottom: 1px solid var(--color-sig) !important;
@@ -779,46 +779,46 @@ html.darkmode .pagination>li>span {
     line-height: 15px !important
 }
 
-.pagination>li>a:first-child,
-.pagination>li>span:first-child,
-html.darkmode .pagination>li>a:first-child,
-html.darkmode .pagination>li>span:first-child {
+.pagination > li > a:first-child,
+.pagination > li > span:first-child,
+html.darkmode .pagination > li > a:first-child,
+html.darkmode .pagination > li > span:first-child {
     border-left: 1px solid var(--color-sig) !important;
     border-radius: 0
 }
 
-.pagination>li>a:last-child,
-.pagination>li>span:last-child,
-html.darkmode .pagination>li>a:last-child,
-html.darkmode .pagination>li>span:last-child {
+.pagination > li > a:last-child,
+.pagination > li > span:last-child,
+html.darkmode .pagination > li > a:last-child,
+html.darkmode .pagination > li > span:last-child {
     border-right: 1px solid var(--color-sig) !important;
     border-radius: 0
 }
 
-.pagination>li>a:hover,
-.pagination>li>a:focus,
-.pagination>li>span:hover,
-.pagination>li>span:focus,
-html.darkmode .pagination>li>a:hover,
-html.darkmode .pagination>li>a:focus,
-html.darkmode .pagination>li>span:hover,
-html.darkmode .pagination>li>span:focus {
+.pagination > li > a:hover,
+.pagination > li > a:focus,
+.pagination > li > span:hover,
+.pagination > li > span:focus,
+html.darkmode .pagination > li > a:hover,
+html.darkmode .pagination > li > a:focus,
+html.darkmode .pagination > li > span:hover,
+html.darkmode .pagination > li > span:focus {
     color: var(--color-sig);
     background: var(--color-fr)
 }
 
-.pagination>.active>a,
-.pagination>.active>a:hover,
-.pagination>.active>a:focus,
-.pagination>.active>span,
-.pagination>.active>span:hover,
-.pagination>.active>span:focus,
-html.darkmode .pagination>.active>a,
-html.darkmode .pagination>.active>a:hover,
-html.darkmode .pagination>.active>a:focus,
-html.darkmode .pagination>.active>span,
-html.darkmode .pagination>.active>span:hover,
-html.darkmode .pagination>.active>span:focus {
+.pagination > .active > a,
+.pagination > .active > a:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span,
+.pagination > .active > span:hover,
+.pagination > .active > span:focus,
+html.darkmode .pagination > .active > a,
+html.darkmode .pagination > .active > a:hover,
+html.darkmode .pagination > .active > a:focus,
+html.darkmode .pagination > .active > span,
+html.darkmode .pagination > .active > span:hover,
+html.darkmode .pagination > .active > span:focus {
     color: var(--color-sig);
     background: var(--color-fr)
 }
@@ -860,7 +860,7 @@ html.darkmode #article-content-wrapper #article-content {
     border: none
 }
 
-#article-info>h2 {
+#article-info > h2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -872,7 +872,7 @@ html.darkmode #article-content-wrapper #article-content {
     margin: 0 !important
 }
 
-#article-info>h2>span {
+#article-info > h2 > span {
     width: fit-content;
     border: none !important;
     font-weight: 700;
@@ -892,11 +892,11 @@ html.darkmode #article-content-wrapper #article-content {
     padding: 7.5px 0
 }
 
-#article-info-writer>strong {
+#article-info-writer > strong {
     margin-right: 1px
 }
 
-#article-info-writer>img {
+#article-info-writer > img {
     margin-left: 3px;
     width: 20px;
     order: 1
@@ -911,8 +911,8 @@ html.darkmode #article-content-wrapper #article-content {
     left: 2em
 }
 
-#article-content-wrapper>.header,
-html.darkmode #article-content-wrapper>.header {
+#article-content-wrapper > .header,
+html.darkmode #article-content-wrapper > .header {
     padding: .5em 0;
     margin: 0 2em 1em;
     border-top: 0 !important;
@@ -923,7 +923,7 @@ html.darkmode #article-content-wrapper>.header {
     gap: 3px
 }
 
-#article-content-wrapper>.header>span {
+#article-content-wrapper > .header > span {
     padding: 0 7px !important;
     height: 18px;
     line-height: 18px;
@@ -933,11 +933,11 @@ html.darkmode #article-content-wrapper>.header {
     color: #fff
 }
 
-#article-content-wrapper>.header>#article-time {
+#article-content-wrapper > .header > #article-time {
     margin-right: auto
 }
 
-#article-content-wrapper>.header>#article-comment a {
+#article-content-wrapper > .header > #article-comment a {
     color: #fff
 }
 
@@ -952,13 +952,13 @@ html.darkmode #article-content span {
     color: #dfdfdf !important;
 }
 
-#article-content-wrapper>.vote-area,
-html.darkmode #article-content-wrapper>.vote-area {
+#article-content-wrapper > .vote-area,
+html.darkmode #article-content-wrapper > .vote-area {
     padding: 1em .8em;
     border: 0
 }
 
-#article-content-wrapper>div.vote-area>button {
+#article-content-wrapper > div.vote-area > button {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -970,7 +970,7 @@ html.darkmode #article-content-wrapper>.vote-area {
     margin: 0 auto
 }
 
-#article-content-wrapper>div.vote-area>button>i {
+#article-content-wrapper > div.vote-area > button > i {
     font-size: 22px !important
 }
 
@@ -986,8 +986,8 @@ html.darkmode #article-content-wrapper>.vote-area {
     margin-right: 2px
 }
 
-#article-content-wrapper>div.footer,
-html.darkmode #article-content-wrapper>div.footer {
+#article-content-wrapper > div.footer,
+html.darkmode #article-content-wrapper > div.footer {
     padding: .75em 1.5em;
     background: var(--color-noti);
     border: solid var(--color-sig);
@@ -1001,21 +1001,21 @@ html.darkmode #article-content-wrapper>div.footer {
     border-width: 1px 0 1px 0
 }
 
-#article-neighbor-list>div:hover,
-#article-neighbor-list>div:focus {
+#article-neighbor-list > div:hover,
+#article-neighbor-list > div:focus {
     background: var(--color-hov)
 }
 
-#article-neighbor-list>div>span.indicator,
-#article-neighbor-list>div>span.author {
+#article-neighbor-list > div > span.indicator,
+#article-neighbor-list > div > span.author {
     color: var(--color-sig)
 }
 
-#article-neighbor-list>div>span.indicator {
+#article-neighbor-list > div > span.indicator {
     padding-left: 1em
 }
 
-#article-neighbor-list>div>span.author {
+#article-neighbor-list > div > span.author {
     padding-right: 1em
 }
 
@@ -1032,13 +1032,13 @@ html.darkmode #article-content-wrapper>div.footer {
     padding: 0 1.5em
 }
 
-#article-reply-area>.header {
+#article-reply-area > .header {
     padding: 0;
     padding: 0 1.5em;
     margin-bottom: 1em
 }
 
-#article-reply-area>.header h5 {
+#article-reply-area > .header h5 {
     color: var(--color-sig) !important;
     display: flex;
     font-size: 0;
@@ -1046,7 +1046,7 @@ html.darkmode #article-content-wrapper>div.footer {
     font-weight: 800
 }
 
-#article-reply-area>.header h5>.fa-commenting:before {
+#article-reply-area > .header h5 > .fa-commenting:before {
     content: '\f0e6';
     font-size: 20px
 }
@@ -1086,10 +1086,10 @@ html.darkmode #article-reply-area #reply-best-area .reply {
     border: 0
 }
 
-#article-reply-area #reply-real-area .reply>.reply-header,
-#article-reply-area #reply-best-area .reply>.reply-header,
-html.darkmode #article-reply-area #reply-real-area .reply>.reply-header,
-html.darkmode #article-reply-area #reply-best-area .reply>.reply-header {
+#article-reply-area #reply-real-area .reply > .reply-header,
+#article-reply-area #reply-best-area .reply > .reply-header,
+html.darkmode #article-reply-area #reply-real-area .reply > .reply-header,
+html.darkmode #article-reply-area #reply-best-area .reply > .reply-header {
     display: grid;
     grid-template-columns: 2.5em 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -1102,22 +1102,22 @@ html.darkmode #article-reply-area #reply-best-area .reply>.reply-header {
     padding-bottom: .3em
 }
 
-#article-reply-area #reply-real-area .reply>.reply-header>.reply-writer-image,
-#article-reply-area #reply-best-area .reply>.reply-header>.reply-writer-image {
+#article-reply-area #reply-real-area .reply > .reply-header > .reply-writer-image,
+#article-reply-area #reply-best-area .reply > .reply-header > .reply-writer-image {
     border: 2px solid var(--color-sig);
     width: 2.5em;
     height: 2.5em;
     grid-row: 1 / 3
 }
 
-#article-reply-area #reply-real-area .reply>.reply-header>small.code,
-#article-reply-area #reply-best-area .reply>.reply-header>small.code {
+#article-reply-area #reply-real-area .reply > .reply-header > small.code,
+#article-reply-area #reply-best-area .reply > .reply-header > small.code {
     font-size: 10px;
     padding: 0
 }
 
-#article-reply-area #reply-real-area .reply>.reply-header>.reply-writer,
-#article-reply-area #reply-best-area .reply>.reply-header>.reply-writer {
+#article-reply-area #reply-real-area .reply > .reply-header > .reply-writer,
+#article-reply-area #reply-best-area .reply > .reply-header > .reply-writer {
     display: flex;
     flex-direction: row-reverse;
     vertical-align: bottom;
@@ -1130,22 +1130,22 @@ html.darkmode #article-reply-area #reply-best-area .reply>.reply-header {
     color: var(--color-sig) !important
 }
 
-#article-reply-area #reply-real-area .reply>.reply-header>.reply-writer.logged>img,
-#article-reply-area #reply-best-area .reply>.reply-header>.reply-writer.logged>img {
+#article-reply-area #reply-real-area .reply > .reply-header > .reply-writer.logged > img,
+#article-reply-area #reply-best-area .reply > .reply-header > .reply-writer.logged > img {
     margin-left: 3px;
     width: 15px;
     height: 15px
 }
 
-#article-reply-area #reply-real-area .reply>.reply-header>.reply-menu,
-#article-reply-area #reply-best-area .reply>.reply-header>.reply-menu {
+#article-reply-area #reply-real-area .reply > .reply-header > .reply-menu,
+#article-reply-area #reply-best-area .reply > .reply-header > .reply-menu {
     padding: 0;
     grid-row: 2 / 3;
     text-align: right
 }
 
-#article-reply-area #reply-real-area .reply>.reply-content,
-#article-reply-area #reply-best-area .reply>.reply-content {
+#article-reply-area #reply-real-area .reply > .reply-content,
+#article-reply-area #reply-best-area .reply > .reply-content {
     margin-left: 1.1em;
     border-left: 2px solid var(--color-sig);
     background: var(--color-hot)
@@ -1158,15 +1158,15 @@ html.darkmode #article-reply-area #reply-best-area .reply.active {
     background-color: transparent !important
 }
 
-#article-reply-area #reply-real-area .reply.active>.reply-content,
-#article-reply-area #reply-best-area .reply.active>.reply-content,
-html.darkmode #article-reply-area #reply-real-area .reply.active>.reply-content,
-html.darkmode #article-reply-area #reply-best-area .reply.active>.reply-content {
+#article-reply-area #reply-real-area .reply.active > .reply-content,
+#article-reply-area #reply-best-area .reply.active > .reply-content,
+html.darkmode #article-reply-area #reply-real-area .reply.active > .reply-content,
+html.darkmode #article-reply-area #reply-best-area .reply.active > .reply-content {
     background: var(--color-pla)
 }
 
-html.darkmode #article-reply-area #reply-real-area .reply>.reply-header>.reply-menu a,
-html.darkmode #article-reply-area #reply-best-area .reply>.reply-header>.reply-menu a {
+html.darkmode #article-reply-area #reply-real-area .reply > .reply-header > .reply-menu a,
+html.darkmode #article-reply-area #reply-best-area .reply > .reply-header > .reply-menu a {
     color: var(--color-sig)
 }
 
@@ -1190,7 +1190,7 @@ html.darkmode #board-info h1 {
     align-items: center
 }
 
-#board-info h1>a {
+#board-info h1 > a {
     font-weight: 700;
     width: fit-content;
     color: #fff;
@@ -1221,7 +1221,7 @@ html.darkmode #board-info h1 {
     border-radius: 10px
 }
 
-#board-info>img#board-info-profile-img {
+#board-info > img#board-info-profile-img {
     display: none
 }
 
@@ -1242,22 +1242,22 @@ html.darkmode #board-info #board-info-bottom a {
     height: fit-content
 }
 
-#board-info>#board-info-bottom>a:hover {
+#board-info > #board-info-bottom > a:hover {
     transform: scale(1.15)
 }
 
-#board-info-bottom>a:nth-child(n) {
+#board-info-bottom > a:nth-child(n) {
     text-align: center;
     border: none !important;
     padding: 0 !important
 }
 
-#board-info-bottom>a:nth-child(n)>i {
+#board-info-bottom > a:nth-child(n) > i {
     text-align: center;
     font-size: 18px
 }
 
-#board-info-bottom>a:nth-child(5) {
+#board-info-bottom > a:nth-child(5) {
     grid-column-start: 2;
     grid-column-end: 3
 }
@@ -1507,11 +1507,11 @@ html.darkmode .fr-popup .fr-colors-tabs .fr-colors-tab.fr-selected-tab {
     color: var(--color-eda) !important
 }
 
-.fr-popup .fr-table-size .fr-select-table-size>span>span {
+.fr-popup .fr-table-size .fr-select-table-size > span > span {
     border-color: var(--color-pla)
 }
 
-.fr-popup .fr-table-size .fr-select-table-size>span[data-col='10'] {
+.fr-popup .fr-table-size .fr-select-table-size > span[data-col='10'] {
     padding-right: 0
 }
 
@@ -1534,7 +1534,7 @@ html.darkmode .fr-box.fr-code-view textarea.fr-code {
     border: 0
 }
 
-.frame>h3 {
+.frame > h3 {
     height: 30px;
     display: flex;
     justify-content: center;
@@ -1542,7 +1542,7 @@ html.darkmode .fr-box.fr-code-view textarea.fr-code {
     white-space: nowrap
 }
 
-.frame>h3:nth-child(1) {
+.frame > h3:nth-child(1) {
     font-size: 20px;
     font-weight: 800;
     line-height: 30px;
@@ -1551,8 +1551,8 @@ html.darkmode .fr-box.fr-code-view textarea.fr-code {
     color: var(--color-sig)
 }
 
-.frame>h3:nth-child(1):before,
-.frame>h3:nth-child(1):after {
+.frame > h3:nth-child(1):before,
+.frame > h3:nth-child(1):after {
     margin: 0 10px;
     content: '━━━━━━━━━━━━━━━━━━━━━━';
     font-size: 20px;
@@ -1609,7 +1609,7 @@ html.darkmode .form-control:focus {
     background: var(--color-noti)
 }
 
-#articleWriteForm div.mt-2>.opt:first-child {
+#articleWriteForm div.mt-2 > .opt:first-child {
     font-weight: 600;
     padding: 0 10px;
     background: var(--color-sig);
@@ -1620,7 +1620,7 @@ html.darkmode .form-control:focus {
     background: var(--color-fr)
 }
 
-#articleWriteForm>div.mt-2.action--btn {
+#articleWriteForm > div.mt-2.action--btn {
     background: var(--color-fr);
     margin-top: 1.5em
 }
@@ -1629,7 +1629,7 @@ html.darkmode .form-control:focus {
     width: 120px !important
 }
 
-#title_color>input {
+#title_color > input {
     text-align: center;
     border: 0;
     border-radius: 0;
@@ -1637,11 +1637,11 @@ html.darkmode .form-control:focus {
     border-width: 4px 0 1px 1px
 }
 
-#title_color>span {
+#title_color > span {
     border: 0;
     border-radius: 0;
     border: 1px solid var(--color-sig);
-    line-height: 16px;
+    line-height: initial;
     padding: 5px 6px
 }
 
@@ -1666,26 +1666,26 @@ a.custom-badge-link:hover {
     height: 34px
 }
 
-#articleWriteForm>div.mt-2.action--btn>a {
+#articleWriteForm > div.mt-2.action--btn > a {
     height: 34px;
     background-color: var(--color-sigr) !important;
     border-color: var(--color-sigr) !important
 }
 
-#articleWriteForm>div.mt-2.action--btn>a:before {
+#articleWriteForm > div.mt-2.action--btn > a:before {
     font-family: "FontAwesome";
     content: "\f1f8  ";
     font-size: 14px
 }
 
-#articleWriteForm>div.mt-2.action--btn>a:hover,
-#articleWriteForm>div.mt-2.action--btn>a:focus {
+#articleWriteForm > div.mt-2.action--btn > a:hover,
+#articleWriteForm > div.mt-2.action--btn > a:focus {
     background-color: var(--color-fr) !important;
     border-color: var(--color-sigr) !important;
     color: var(--color-sigr) !important
 }
 
-#comment-write-button-area>label {
+#comment-write-button-area > label {
     display: flex;
     align-content: center;
     justify-content: center;
@@ -1703,12 +1703,12 @@ a.custom-badge-link:hover {
     line-height: 30px
 }
 
-#comment-write-button-area>label>input {
+#comment-write-button-area > label > input {
     margin: 0 0 0 4px;
     order: 1
 }
 
-#comment-write-button-area>label>i {
+#comment-write-button-area > label > i {
     display: none
 }
 
@@ -1762,8 +1762,8 @@ footer .container {
     row-gap: 1px
 }
 
-footer .container>span,
-html.darkmode footer .container>span {
+footer .container > span,
+html.darkmode footer .container > span {
     grid-row: 1 / row-end;
     grid-column: 3 / 4;
     align-self: center;
@@ -1772,7 +1772,7 @@ html.darkmode footer .container>span {
     color: #b3b3b3
 }
 
-footer .container>span>a[href] {
+footer .container > span > a[href] {
     font-weight: 600;
     color: #fff
 }
@@ -1870,13 +1870,13 @@ html.darkmode .theme_btn_box .theme_btn {
     text-decoration-line: underline
 }
 
-body>header {
+body > header {
     position: sticky;
     top: calc(-290px + 50px);
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5)
 }
 
-body>header>div:nth-child(1).container {
+body > header > div:nth-child(1).container {
     position: sticky;
     top: 0;
     z-index: 998
