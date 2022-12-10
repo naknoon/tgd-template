@@ -702,7 +702,7 @@ html.darkmode #article-list #article-list-category>a {
         border-radius: 0;
         border: 0;
         box-shadow: none;
-        top: 0;
+        top: 15px;
         left: initial;
         right: -100px;
         transform: translate(0);
@@ -1723,7 +1723,7 @@ footer {
 }
 
 footer:before {
-    content: 'Custom CSS Designed by Naknoon';
+    content: 'CSS Template Designed by Naknoon';
     grid-row: 1 / 2;
     grid-column: 2 / 4;
     align-self: end;
@@ -1736,7 +1736,7 @@ footer:before {
 }
 
 footer:after {
-    content: '트꾸 공모전을 위해 제작되었으며 현재 배포 단계가 아니므로 다른 게시판에서는 사용하실 수 없습니다';
+    content: 'https://naknoon.cc · naknoon.cc@gmail.com · 소낙눈#6686';
     grid-row: 2 / 3;
     grid-column: 2 / 4;
     align-self: start;
