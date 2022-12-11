@@ -146,6 +146,7 @@ header #header-bar #header-top-notice {
     color: rgb(255 255 255 / 60%);  
     font-size: 13px;
     font-weight: 500;
+    background: var(--color-sig)
 }
 
 header #header-bar #header-top-notice a {
