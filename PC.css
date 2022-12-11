@@ -866,7 +866,7 @@ html.darkmode #article-content-wrapper #article-content {
     font-size: 15px;
     letter-spacing: -.04em;
     line-height: 20px;
-    color: hsl(0 0% 40% / 1);
+    color: var(--color-sig);
     margin-left: calc(35px + 5px);
     margin-bottom: 10px;
     padding: 7.5px 0
