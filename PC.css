@@ -23,7 +23,7 @@ input:focus {
     outline: none !important
 }
 
-body {
+* {
     font-family: 'Pretendard Variable', sans-serif;
 }
 
