@@ -136,23 +136,38 @@ body > header > div:nth-child(1) > div > div.col-xs-8 {
     height: 50px
 }
 
-#header-top-notice {
+header #header-bar #header-top-notice {
     position: absolute;
-    height: 30px !important;
+    height: 30px;
     line-height: 30px;
-    padding: 0 !important;
-    top: 50px
+    padding: 0;
+    top: 50px;
+    
+    color: rgb(255 255 255 / 60%);  
+    font-size: 13px;
+    font-weight: 500;
 }
 
 header #header-bar #header-top-notice a {
-    color: rgb(255 255 255 / 65%) !important;
+    color: rgb(255 255 255 / 60%);
     font-size: 13px;
-    font-weight: 500
+    font-weight: 500;
 }
 
 header #header-bar #header-top-notice strong.notice-badge {
     font-size: 0;
-    padding: 0
+    padding: 0;
+}
+
+header #header-bar:before {
+    content: '전광판에서 여러분의 광고를 여기에 올릴 수 있어요';
+    position: absolute;
+    color: rgb(255 255 255 / 65%) !important;
+    font-size: 13px;
+    font-weight: 500;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
 }
 
 header #right-search-form {
