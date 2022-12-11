@@ -1,29 +1,9 @@
 :root {
-    --url-logo: url(https://cdn.discordapp.com/attachments/936953394415935568/983031726773239818/logo_line.svg)
+    --color-lin: #337ab7;
 }
 
-html {
-    --color-bc: #cbd1dc;
-    --color-fr: #FFF;
-    --color-noti: #D8DDE8;
-    --color-hot: #E5E9F0;
-    --color-hov: #F2F4F7;
-    --color-sig: #585C66;
-    --color-pla: #7F8899;
-    --color-hig: #FFF6BA;
-    --color-lin: #337ab7
-}
-
-html.darkmode {
-    --color-bc: #121212;
-    --color-fr: #1D1D1D;
-    --color-noti: #3A3A3A;
-    --color-hot: #313131;
-    --color-hov: #262626;
-    --color-sig: #6E7380;
-    --color-pla: #7F8899;
-    --color-hig: #5B5216;
-    --color-lin: #B88533
+:root.darkmode {
+    --color-lin: #B88533;
 }
 
 :root {
@@ -32,7 +12,7 @@ html.darkmode {
     --color-sigk: #1C1E21;
     --color-ntb: #E7524C;
     --color-eda: #1e88e5;
-    --font-pro: Fontawesome, 'Pretendard Variable'
+    --font-pro: Fontawesome, 'Pretendard Variable';
 }
 
 :focus:not(:focus-visible) {
@@ -43,8 +23,8 @@ input:focus {
     outline: none !important
 }
 
-* {
-    font-family: var(--font-pro), sans-serif
+body {
+    font-family: 'Pretendard Variable', sans-serif;
 }
 
 html,
