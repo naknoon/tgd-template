@@ -1,1 +1,1 @@
-# TGD_CSS_Template
+tgd-template
