@@ -684,6 +684,10 @@ html.darkmode #article-list #article-list-category > a {
     border: none !important;
 }
 
+html.darkmode #article-list #article-list-category #board-home-link-btn {
+    background: var(--color-fr);
+}
+
 @media (min-width: 1400px) {
     #article-list #article-list-category.can-float,
     html.darkmode #article-list #article-list-category.can-float {
