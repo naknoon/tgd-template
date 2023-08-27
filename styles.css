@@ -1807,10 +1807,14 @@ footer .container:after {
     margin: 0;
     position: relative;
     display: flex;
-    width: 50px !important;
-    height: 50px !important;
     background: none !important;
     border: 0;
+
+    /* 새로운 디자인 테스트 */
+    width: 60px !important;
+    height: 60px !important;
+    align-items: center;
+    justify-content: center;
 }
 
 .theme_btn_box .theme_btn {
@@ -1826,20 +1830,34 @@ footer .container:after {
 
 html.darkmode .theme_btn_box .theme_btn {
     background: none;
-    box-shadow: inset -10px 0 0 0 #fff;
+    box-shadow: inset -40px 0 0 0 var(--color-sigy);
+    width: 30px !important;
+    height: 30px !important;
 }
 
 .theme_btn_box:before {
     content: "";
+
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 1;
+    background: transparent;
+    border: 7px dotted transparent;
+    border-radius: 100px;
+    transition: width 0.5s, height 0.5s;
+}
+
+html.darkmode .theme_btn_box:before {
     width: 50px;
     height: 50px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    background: #000;
-    border: 0;
-    border-radius: 100px;
+    transition: width 0.5s, height 0.5s;
+
+    border: 7px dotted var(--color-sigy);
 }
 
 #switch-platform-link {
