@@ -64,14 +64,13 @@ html.darkmode body {
     line-height: initial;
     padding: 5px 10px;
     gap: 3px;
-}
 
-.btn:hover,
-.btn:focus {
-    color: var(--color-sig) !important;
-    background-color: var(--color-fr) !important;
+    &:hover,
+    &:focus {
+        color: var(--color-sig) !important;
+        background-color: var(--color-fr) !important;
+    }
 }
-
 p a[href] {
     color: var(--color-lin) !important;
 }
@@ -87,47 +86,93 @@ p a[href] {
     display: none !important;
 }
 
+@keyframes gradient {
+    from {
+        background-position: 0 50%;
+    }
+
+    to {
+        background-position: 100% 50%;
+    }
+}
+
+/* 헤더 배너 */
 header {
     padding: 0;
-}
-
-body > header:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+    height: 290px;
     min-width: 1100px;
-    height: 50px;
-    background-color: var(--color-sigk);
+    z-index: 103;
+    margin-bottom: 15px;
+    background-color: #1e2433;
+    background: linear-gradient(-45deg, #33cb86, #13c8d1, #148acf, #3c68b4, #5a55ae, #7b5fac, #8f6aae, #a86aa4, #cc6b8e, #f18271, #f3a469, #f7c978);
+    background-size: 400% 400%;
+    animation: gradient 7s ease infinite alternate;
+    position: sticky;
+    top: calc(-290px + 50px);
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        min-width: 1100px;
+        height: 50px;
+        background-color: var(--color-sigk);
+    }
+
+    &::after {
+        content: "";
+        background: var(--url-logo) no-repeat;
+        background-size: auto 80px;
+        background-position: center center;
+        width: 100%;
+        height: calc(290px - 50px - 30px);
+        display: block;
+        filter: drop-shadow(3px 3px 2px rgb(0 0 0 / 50%));
+    }
+
+    > div.container:nth-child(1) {
+        position: sticky;
+        top: 0;
+        z-index: 998;
+    }
 }
 
-:root {
-    --logo-pdw: 12px;
-    --logo-pdh: calc(120px - calc(50px - var(--logo-pdw) * 2));
-    --logo-pd: var(--logo-pdw) var(--logo-pdh) var(--logo-pdw) 0;
-}
+/* 로고 */
+header .row {
+    > div:nth-child(1) {
+        > a {
+            --logo-pdw: 12px;
+            --logo-pdh: calc(120px - calc(50px - var(--logo-pdw) * 2));
+            --logo-pd: var(--logo-pdw) var(--logo-pdh) var(--logo-pdw) 0;
 
-header .row > div:nth-child(1) > a > img {
-    content: url(https://cdn.discordapp.com/attachments/901132800793649233/936304107487129610/tgd_ico.png);
-    width: 120px;
-    height: 50px;
-    padding: var(--logo-pd);
-}
+            & img {
+                content: url(https://cdn.discordapp.com/attachments/901132800793649233/936304107487129610/tgd_ico.png);
+                width: 120px;
+                height: 50px;
+                padding: var(--logo-pd);
+            }
 
-header .row > div:nth-child(1) > a::after {
-    content: "트게더";
-    position: absolute;
-    font-size: 20px;
-    font-weight: 600;
-    color: #fff;
-    line-height: 50px;
-    left: calc(15px + calc(50px - var(--logo-pdw) * 2) + 5px);
-}
+            &::after {
+                content: "트게더";
+                position: absolute;
+                font-size: 20px;
+                font-weight: 600;
+                color: #fff;
+                line-height: 50px;
+                left: calc(15px + calc(50px - var(--logo-pdw) * 2) + 5px);
+            }
 
-header .row > div:nth-child(1) > a:hover::after,
-header .row > div:nth-child(1) > a:focus::after {
-    content: "메인으로";
+            &:hover,
+            &:focus {
+                &::after {
+                    content: "메인으로";
+                }
+            }
+        }
+    }
 }
 
 body > header > div:nth-child(1) > div > div.col-xs-4,
@@ -136,92 +181,7 @@ body > header > div:nth-child(1) > div > div.col-xs-8 {
     height: 50px;
 }
 
-header #header-bar #header-top-notice {
-    position: absolute;
-    height: 30px;
-    line-height: 30px;
-    padding: 0;
-    top: 50px;
-
-    color: rgb(255 255 255 / 60%);
-    font-size: 13px;
-    font-weight: 500;
-    background: var(--color-sig);
-}
-
-header #header-bar #header-top-notice a {
-    color: rgb(255 255 255 / 60%);
-    font-size: 13px;
-    font-weight: 500;
-}
-
-header #header-bar #header-top-notice strong.notice-badge {
-    font-size: 0;
-    padding: 0;
-}
-
-header #header-bar:before {
-    content: "전광판에서 여러분의 광고를 여기에 올릴 수 있어요";
-    position: absolute;
-    color: rgb(255 255 255 / 65%) !important;
-    font-size: 13px;
-    font-weight: 500;
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-}
-
-header #right-search-form {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: calc(150px + 5px + 20px);
-    height: 50px;
-    padding: 0 !important;
-}
-
-header #right-search-btn {
-    width: 20px;
-    height: 20px;
-    padding: 0;
-}
-
-header #right-search-btn > i {
-    display: block;
-    font-size: 20px !important;
-    color: #fff;
-}
-
-header #right-search-form > #right-search-input {
-    width: 0;
-    height: 30px;
-    padding: 0;
-    margin-right: 5px;
-    background: none;
-    border: none;
-    color: #fff;
-    opacity: 0;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    text-align: right;
-    line-height: initial;
-    transition: width 0.3s 0.05s ease-out, opacity 0.4s ease-in-out;
-}
-
-header #right-search-form > #right-search-input::placeholder {
-    color: rgba(255, 255, 255, 60%) !important;
-}
-
-header #right-search-form:hover > #right-search-input,
-header #right-search-form > #right-search-input:focus {
-    width: 150px;
-    opacity: 1;
-}
-
-:root {
-    --btnwidth: calc(calc(700px - calc(100px * 5)) / 4);
-}
-
+/* 전광판 */
 header #header-bar {
     margin: 0 auto;
     background: var(--color-sig);
@@ -230,6 +190,93 @@ header #header-bar {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    &::before {
+        content: "전광판에서 여러분의 광고를 여기에 올릴 수 있어요";
+        position: absolute;
+        color: rgb(255 255 255 / 65%) !important;
+        font-size: 13px;
+        font-weight: 500;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+    }
+
+    & #header-top-notice {
+        position: absolute;
+        height: 30px;
+        line-height: 30px;
+        padding: 0;
+        top: 50px;
+
+        color: rgb(255 255 255 / 60%);
+        font-size: 13px;
+        font-weight: 500;
+        background: var(--color-sig);
+
+        & a {
+            color: rgb(255 255 255 / 60%);
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        & strong.notice-badge {
+            font-size: 0;
+            padding: 0;
+        }
+    }
+}
+
+/* 상단 검색바 */
+header #right-search-form {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: calc(150px + 5px + 20px);
+    height: 50px;
+    padding: 0 !important;
+
+    & #right-search-input {
+        width: 0;
+        height: 30px;
+        padding: 0;
+        margin-right: 5px;
+        background: none;
+        border: none;
+        color: #fff;
+        opacity: 0;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        text-align: right;
+        line-height: initial;
+        transition: width 0.3s 0.05s ease-out, opacity 0.4s ease-in-out;
+
+        &::placeholder {
+            color: rgba(255, 255, 255, 60%) !important;
+        }
+    }
+
+    & #right-search-btn {
+        width: 20px;
+        height: 20px;
+        padding: 0;
+
+        > i {
+            display: block;
+            font-size: 20px !important;
+            color: #fff;
+        }
+    }
+
+    &:hover > #right-search-input,
+    & > #right-search-input:focus {
+        width: 150px;
+        opacity: 1;
+    }
+}
+
+:root {
+    --btnwidth: calc(calc(700px - calc(100px * 5)) / 4);
 }
 
 header #header-bar > .row {
@@ -244,18 +291,18 @@ header #header-bar > .row {
     position: absolute;
     top: 0;
     z-index: 999;
-}
 
-#header-menu-left,
-#header-menu-right {
-    display: inline-flex;
-    float: none;
-    border: none !important;
-    width: auto;
-    height: 50px;
-    line-height: 50px;
-    padding: 0 !important;
-    gap: var(--btnwidth);
+    & #header-menu-left,
+    & #header-menu-right {
+        display: inline-flex;
+        float: none;
+        border: none !important;
+        width: auto;
+        height: 50px;
+        line-height: 50px;
+        padding: 0 !important;
+        gap: var(--btnwidth);
+    }
 }
 
 #latestDropdown,
@@ -315,6 +362,16 @@ header #header-bar > .row {
     content: "내 정보" !important;
 }
 
+#userDropdown > i:after {
+    content: " \f235";
+    font-size: 14px;
+    font-family: "fontawesome";
+    color: var(--color-ntb);
+    height: 50px;
+    line-height: 50px;
+}
+
+/* 알림 배지 */
 #note-notification-badge,
 #notification-badge {
     height: 50px;
@@ -329,57 +386,15 @@ header #header-bar > .row {
     padding: 0 !important;
     margin-left: 5px;
     border-radius: 0 !important;
-}
 
-#note-notification-badge:before,
-#notification-badge:before {
-    content: "\f0f3";
-    font-size: 12px;
-    font-family: "fontawesome";
-    color: var(--color-ntb);
-    position: relative;
-    top: -1px;
-}
-
-#userDropdown > i:after {
-    content: " \f235";
-    font-size: 14px;
-    font-family: "fontawesome";
-    color: var(--color-ntb);
-    height: 50px;
-    line-height: 50px;
-}
-
-@keyframes gradient {
-    from {
-        background-position: 0 50%;
+    &::before {
+        content: "\f0f3";
+        font-size: 12px;
+        font-family: "fontawesome";
+        color: var(--color-ntb);
+        position: relative;
+        top: -1px;
     }
-
-    to {
-        background-position: 100% 50%;
-    }
-}
-
-body > header {
-    height: 290px;
-    min-width: 1100px;
-    z-index: 103;
-    margin-bottom: 15px;
-    background-color: #1e2433;
-    background: linear-gradient(-45deg, #33cb86, #13c8d1, #148acf, #3c68b4, #5a55ae, #7b5fac, #8f6aae, #a86aa4, #cc6b8e, #f18271, #f3a469, #f7c978);
-    background-size: 400% 400%;
-    animation: gradient 7s ease infinite alternate;
-}
-
-header::after {
-    content: "";
-    background: var(--url-logo) no-repeat;
-    background-size: auto 80px;
-    background-position: center center;
-    width: 100%;
-    height: calc(290px - 50px - 30px);
-    display: block;
-    filter: drop-shadow(3px 3px 2px rgb(0 0 0 / 50%));
 }
 
 #main .menu-wrapper {
@@ -1719,46 +1734,72 @@ footer {
     margin-top: 4em;
     padding: 30px 0;
     background: var(--color-sigk);
-}
 
-footer:before {
-    content: "CSS Template Designed by Naknoon";
-    grid-row: 1 / 2;
-    grid-column: 2 / 4;
-    align-self: end;
-    justify-self: end;
-    padding: 0 20px;
-    font-weight: 600;
-    letter-spacing: -0.04em;
-    white-space: pre;
-    color: #fff;
-}
+    & .container {
+        grid-row: 3 / 4;
+        grid-column: 2 / 4;
+        width: 1070px;
+        margin-top: 10px;
+        padding: 10px 20px 0;
+        border-top: 2px solid #fff;
+        display: grid;
+        grid-template-rows: minmax(auto, auto) minmax(auto, auto) [row-end];
+        grid-template-columns: minmax(auto, auto) 1fr;
+        column-gap: 8px;
+        row-gap: 1px;
 
-footer:after {
-    content: "https://naknoon.cc · naknoon.cc@gmail.com";
-    grid-row: 2 / 3;
-    grid-column: 2 / 4;
-    align-self: start;
-    justify-self: end;
-    padding: 0 20px;
-    font-size: 12px;
-    letter-spacing: -0.04em;
-    white-space: pre;
-    color: #b3b3b3;
-}
+        &::before {
+            content: "색상 모드 전환하기";
+            grid-row: 1 / 2;
+            grid-column: 2 / 3;
+            align-self: end;
+            justify-self: start;
+            font-size: 20px;
+            line-height: 20px;
+            font-weight: 700;
+            letter-spacing: -0.05em;
+            white-space: pre;
+            color: #fff;
+        }
 
-footer .container {
-    grid-row: 3 / 4;
-    grid-column: 2 / 4;
-    width: 1070px;
-    margin-top: 10px;
-    padding: 10px 20px 0;
-    border-top: 2px solid #fff;
-    display: grid;
-    grid-template-rows: minmax(auto, auto) minmax(auto, auto) [row-end];
-    grid-template-columns: minmax(auto, auto) 1fr;
-    column-gap: 8px;
-    row-gap: 1px;
+        &::after {
+            content: "달 버튼을 클릭해 모드를 넘나들 수 있어요";
+            grid-row: 2 / 3;
+            grid-column: 2 / 3;
+            align-self: start;
+            justify-self: start;
+            font-size: 12px;
+            letter-spacing: -0.05em;
+            white-space: pre;
+            color: #b3b3b3;
+        }
+    }
+
+    &::before {
+        content: "CSS Template Designed by Naknoon";
+        grid-row: 1 / 2;
+        grid-column: 2 / 4;
+        align-self: end;
+        justify-self: end;
+        padding: 0 20px;
+        font-weight: 600;
+        letter-spacing: -0.04em;
+        white-space: pre;
+        color: #fff;
+    }
+
+    &::after {
+        content: "https://naknoon.cc · naknoon.cc@gmail.com";
+        grid-row: 2 / 3;
+        grid-column: 2 / 4;
+        align-self: start;
+        justify-self: end;
+        padding: 0 20px;
+        font-size: 12px;
+        letter-spacing: -0.04em;
+        white-space: pre;
+        color: #b3b3b3;
+    }
 }
 
 footer .container > span,
@@ -1776,127 +1817,95 @@ footer .container > span > a[href] {
     color: #fff;
 }
 
-footer .container:before {
-    content: "색상 모드 전환하기";
-    grid-row: 1 / 2;
-    grid-column: 2 / 3;
-    align-self: end;
-    justify-self: start;
-    font-size: 20px;
-    line-height: 20px;
-    font-weight: 700;
-    letter-spacing: -0.05em;
-    white-space: pre;
-    color: #fff;
-}
+/* 모드 전환 버튼 */
+html {
+    & {
+        & #theme_btn_box {
+            grid-row: 1 / row-end;
+            grid-column: 1 / 2;
+            align-self: center;
+            justify-self: start;
+            padding: 0 !important;
+            margin: 0;
+            position: relative;
+            display: flex;
+            background: none !important;
+            border: 0;
+            width: 60px !important;
+            height: 60px !important;
+            align-items: center;
+            justify-content: center;
 
-footer .container:after {
-    content: "달 버튼을 클릭해 모드를 넘나들 수 있어요";
-    grid-row: 2 / 3;
-    grid-column: 2 / 3;
-    align-self: start;
-    justify-self: start;
-    font-size: 12px;
-    letter-spacing: -0.05em;
-    white-space: pre;
-    color: #b3b3b3;
-}
+            & .theme_btn {
+                background: none;
+                width: 50px !important;
+                height: 50px !important;
+                border: 0 !important;
+                transition: all 0.5s ease-in-out !important;
+                padding: 0;
+                z-index: 5;
+                box-shadow: inset 25px 0 0 0 var(--color-sigy);
+            }
 
-#theme_btn_box {
-    grid-row: 1 / row-end;
-    grid-column: 1 / 2;
-    align-self: center;
-    justify-self: start;
-    padding: 0 !important;
-    margin: 0;
-    position: relative;
-    display: flex;
-    background: none !important;
-    border: 0;
+            &::before {
+                content: "";
+                width: 0px;
+                height: 0px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 1;
+                background: transparent;
+                border: 7px dotted transparent;
+                border-radius: 100px;
+                transition: width 0.5s, height 0.5s;
+            }
+        }
+    }
 
-    /* 새로운 디자인 테스트 */
-    width: 60px !important;
-    height: 60px !important;
-    align-items: center;
-    justify-content: center;
-}
+    &.darkmode {
+        & #theme_btn_box {
+            & .theme_btn {
+                background: none;
+                box-shadow: inset -40px 0 0 0 var(--color-sigy);
+                width: 30px !important;
+                height: 30px !important;
+            }
 
-.theme_btn_box .theme_btn {
-    background: none;
-    width: 50px !important;
-    height: 50px !important;
-    border: 0 !important;
-    transition: all 0.5s ease-in-out !important;
-    padding: 0;
-    z-index: 5;
-    box-shadow: inset 25px 0 0 0 var(--color-sigy);
-}
-
-html.darkmode .theme_btn_box .theme_btn {
-    background: none;
-    box-shadow: inset -40px 0 0 0 var(--color-sigy);
-    width: 30px !important;
-    height: 30px !important;
-}
-
-.theme_btn_box:before {
-    content: "";
-
-    width: 0px;
-    height: 0px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    z-index: 1;
-    background: transparent;
-    border: 7px dotted transparent;
-    border-radius: 100px;
-    transition: width 0.5s, height 0.5s;
-}
-
-html.darkmode .theme_btn_box:before {
-    width: 50px;
-    height: 50px;
-    transition: width 0.5s, height 0.5s;
-
-    border: 7px dotted var(--color-sigy);
+            &::before {
+                width: 50px;
+                height: 50px;
+                transition: width 0.5s, height 0.5s;
+                border: 7px dotted var(--color-sigy);
+            }
+        }
+    }
 }
 
 #switch-platform-link {
     font-size: 0;
     text-decoration-line: none !important;
-}
 
-#switch-platform-link:before {
-    content: "\f2d2";
-    font-family: "fontawesome";
-    font-size: 14px;
-    font-weight: 400;
-    margin-right: 4px;
-}
+    &::before {
+        content: "\f2d2";
+        font-family: "fontawesome";
+        font-size: 14px;
+        font-weight: 400;
+        margin-right: 4px;
+    }
 
-#switch-platform-link:after {
-    content: "모바일 뷰로 전환하기";
-    font-size: 14px;
-    font-weight: 600;
-}
+    &::after {
+        content: "모바일 뷰로 전환하기";
+        font-size: 14px;
+        font-weight: 600;
+    }
 
-#switch-platform-link:hover:after {
-    text-decoration-line: underline;
-}
-
-body > header {
-    position: sticky;
-    top: calc(-290px + 50px);
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
-}
-
-body > header > div:nth-child(1).container {
-    position: sticky;
-    top: 0;
-    z-index: 998;
+    &:hover {
+        &::after {
+            text-decoration-line: underline;
+        }
+    }
 }
 
 #movetotop {
@@ -1905,11 +1914,11 @@ body > header > div:nth-child(1).container {
     right: 0;
     opacity: 0.8;
     margin: 2em;
-}
 
-#movetotop img {
-    content: url(https://cdn.discordapp.com/attachments/936953394415935568/1034081132767092759/up.svg);
-    width: 60px;
-    filter: brightness(100) drop-shadow(3px 3px 2px rgb(0 0 0 / 50%));
-    float: right;
+    & img {
+        content: url(https://cdn.discordapp.com/attachments/936953394415935568/1034081132767092759/up.svg);
+        width: 60px;
+        filter: brightness(100) drop-shadow(3px 3px 2px rgb(0 0 0 / 50%));
+        float: right;
+    }
 }
