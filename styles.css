@@ -432,31 +432,28 @@ header #header-bar > .row {
         }
     }
 
-    #fav-shortcut-area > a,
-    .darkmode & #fav-shortcut-area > a {
+    /* 즐겨찾기 목록 */
+    #fav-shortcut-area,
+    .darkmode #fav-shortcut-area {
         background: var(--color-pla);
-        color: #fff;
-        border: 0;
+
+        & a {
+            color: #fff;
+            border: 0;
+
+            & em > i {
+                width: 20px;
+                color: #fff !important;
+            }
+
+            &:hover,
+            &:focus,
+            .darkmode &:hover,
+            .darkmode &:focus {
+                background: var(--color-sig) !important;
+            }
+        }
     }
-}
-
-#main .menu-wrapper #fav-shortcut-area > a,
-html.darkmode #main .menu-wrapper #fav-shortcut-area > a {
-    background: var(--color-pla);
-    color: #fff;
-    border: 0;
-}
-
-#fav-shortcut-area > a > em > i {
-    width: 20px;
-    color: #fff !important;
-}
-
-#main .menu-wrapper #fav-shortcut-area > a:hover,
-#main .menu-wrapper #fav-shortcut-area > a:focus,
-html.darkmode #main .menu-wrapper #fav-shortcut-area > a:hover,
-html.darkmode #main .menu-wrapper #fav-shortcut-area > a:focus {
-    background: var(--color-sig);
 }
 
 #article-list > div:nth-child(3):not(#article-list > .article-list-row, #article-list-menu),
