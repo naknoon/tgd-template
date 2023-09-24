@@ -52,6 +52,7 @@ html.darkmode body {
     scroll-behavior: smooth;
 }
 
+/* 버튼 */
 .btn {
     color: #fff !important;
     background-color: var(--color-sig) !important;
@@ -71,6 +72,8 @@ html.darkmode body {
         background-color: var(--color-fr) !important;
     }
 }
+
+/* 하이퍼링크 */
 p a[href] {
     color: var(--color-lin) !important;
 }
@@ -494,152 +497,173 @@ html.darkmode #article-list > div:nth-child(3):not(#article-list > .article-list
     background: var(--color-fr) !important;
 }
 
+/* 게시글 목록 */
 #article-list {
     margin: 0;
     padding: 15px;
-}
 
-#article-list > .article-list-row > .item > .list-title > a:visited {
-    color: #acacac !important;
-}
+    /* 게시글 */
+    .article-list-row,
+    .darkmode && .article-list-row {
+        border: none !important;
+        transition: 0.2s;
 
-#article-list > .article-list-row > .item > .list-header > span,
-html.darkmode #article-list > .article-list-row > .item > .list-header > span {
-    color: var(--color-sig);
-    background: transparent !important;
-    font-size: 14px;
-}
-
-#article-list > .article-list-row > .item > .list-header.v0 > span {
-    visibility: hidden;
-}
-
-#article-list > .article-list-row > .item > .list-title > small.comment-count,
-html.darkmode #article-list > .article-list-row > .item > .list-title > small.comment-count {
-    color: var(--color-sig);
-}
-
-#article-list > .article-list-row > .item > .list-title > .list-writer {
-    padding: 0 16px;
-    border-left: none !important;
-}
-
-#article-list > .article-list-row > .item > .list-title > .list-writer > span {
-    width: fit-content !important;
-    height: 18px;
-}
-
-#article-list > .article-list-row > .item > .list-title > .list-writer.logged > span,
-html.darkmode #article-list > .article-list-row > .item > .list-title > .list-writer.logged > span {
-    color: var(--color-sig);
-}
-
-#article-list > .article-list-row,
-html.darkmode #article-list > .article-list-row {
-    border: none !important;
-    transition: 0.2s;
-}
-
-#article-list > .article-list-row > .item > .list-header {
-    border-left: none !important;
-}
-
-#article-list > .article-list-row > .item > .list-checkbox,
-#article-list > .article-list-row > .item > .list-header,
-#article-list > .article-list-row > .item > .list-category,
-#article-list > .article-list-row > .item > .list-title,
-#article-list > .article-list-row > .item > .list-title > .list-category,
-#article-list > .article-list-row > .item > .list-title > .list-writer,
-#article-list > .article-list-row > .item > .list-blocked,
-#article-list > .article-list-row > .item > .list-time {
-    border-color: var(--color-hot) !important;
-}
-
-#article-list > .article-list-row.active,
-html.darkmode #article-list > .article-list-row.active {
-    background-color: var(--color-hot);
-}
-
-#article-list > .article-list-row:hover,
-#article-list > .article-list-row:focus,
-html.darkmode #article-list > .article-list-row:hover,
-html.darkmode #article-list > .article-list-row:focus {
-    background-color: var(--color-hov) !important;
-    transition: 0.2s;
-}
-
-#article-list > .article-list-row.notice > .item > .list-header > strong,
-#article-list > .article-list-row.hot > .item > .list-header > strong,
-#article-list > .article-list-row.notice > .item > .list-header > b,
-#article-list > .article-list-row.hot > .item > .list-header > b {
-    font-size: 0;
-}
-
-#article-list > .article-list-row.notice > .item > .list-header > strong:after,
-#article-list > .article-list-row.notice > .item > .list-header > b:after {
-    font-family: "fontawesome";
-    font-size: 14px;
-    color: var(--color-sig);
-    content: "\f08d";
-}
-
-#article-list > .article-list-row.hot > .item > .list-header > strong:after,
-#article-list > .article-list-row.hot > .item > .list-header > b:after {
-    font-family: "fontawesome";
-    font-size: 13px;
-    color: #efc839;
-    content: "\f005";
-}
-
-/* 공지글 목록 */
-#article-list > .article-list-row.notice,
-html.darkmode #article-list > .article-list-row.notice {
-    background-color: var(--color-noti);
-
-    .item {
-        .list-checkbox,
-        .list-header,
-        .list-category,
-        .list-title,
-        .list-blocked,
-        .list-time {
-            border-bottom: none !important;
+        &:hover,
+        &:focus {
+            background-color: var(--color-hov) !important;
+            transition: 0.2s;
         }
 
-        .list-title {
-            padding: 5px 0;
+        &.active,
+        .darkmode &.active {
+            background-color: var(--color-hot);
+        }
 
-            .a-badge,
-            .comment-count,
-            .list-writer {
-                display: none;
+        &.notice,
+        &.hot {
+            .item {
+                .list-header {
+                    & strong,
+                    & b {
+                        font-size: 0;
+                    }
+                }
             }
         }
 
-        .list-time {
-            font-family: "Pretendard Variable";
-            font-size: 12px;
-            line-height: 19px;
-            float: right;
-            right: 5px;
-            width: 60px;
-            height: 19px;
-            margin: 5px 0;
-            background: var(--color-pla);
-            border: 1px solid var(--color-pla) !important;
-            color: #fff;
+        /* 공통 */
+        .item {
+            .list-checkbox,
+            .list-header,
+            .list-category,
+            .list-title,
+            .list-title > .list-category,
+            .list-title > .list-writer,
+            .list-blocked,
+            .list-time {
+                border-color: var(--color-hot) !important;
+            }
 
-            &::after {
-                content: "\f017";
-                font-family: "fontawesome";
+            .list-header {
+                border-left: none !important;
+
+                & span,
+                .darkmode & span {
+                    color: var(--color-sig);
+                    background: transparent !important;
+                    font-size: 14px;
+                }
+
+                &.v0 {
+                    & span {
+                        visibility: hidden;
+                    }
+                }
+            }
+
+            .list-title {
+                & a:visited {
+                    color: #acacac !important;
+                }
+
+                & small.comment-count,
+                .darkmode & small.comment-count {
+                    color: var(--color-sig);
+                }
+
+                .list-writer {
+                    padding: 0 16px;
+                    border-left: none !important;
+
+                    & span {
+                        width: fit-content !important;
+                        height: 18px;
+                    }
+
+                    &.logged span,
+                    .darkmode &.logged span {
+                        color: var(--color-sig);
+                    }
+                }
+            }
+        }
+
+        /* 공지 */
+        &.notice,
+        .darkmode &&.notice {
+            background-color: var(--color-noti);
+
+            .item {
+                .list-checkbox,
+                .list-header,
+                .list-category,
+                .list-title,
+                .list-blocked,
+                .list-time {
+                    border-bottom: none !important;
+                }
+
+                .list-header {
+                    & strong,
+                    & b {
+                        &::after {
+                            font-family: "fontawesome";
+                            font-size: 14px;
+                            color: var(--color-sig);
+                            content: "\f08d";
+                        }
+                    }
+                }
+
+                .list-title {
+                    padding: 5px 0;
+
+                    .a-badge,
+                    .comment-count,
+                    .list-writer {
+                        display: none;
+                    }
+                }
+
+                .list-time {
+                    font-family: "Pretendard Variable";
+                    font-size: 12px;
+                    line-height: 19px;
+                    float: right;
+                    right: 5px;
+                    width: 60px;
+                    height: 19px;
+                    margin: 5px 0;
+                    background: var(--color-pla);
+                    border: 1px solid var(--color-pla) !important;
+                    color: #fff;
+
+                    &::after {
+                        content: "\f017";
+                        font-family: "fontawesome";
+                    }
+                }
+            }
+        }
+
+        /* 인기 */
+        &.hot,
+        .darkmode &&.hot {
+            background-color: var(--color-hot);
+
+            .item .list-header {
+                & strong,
+                & b {
+                    &::after {
+                        font-family: "fontawesome";
+                        font-size: 13px;
+                        color: #efc839;
+                        content: "\f005";
+                    }
+                }
             }
         }
     }
-}
-
-#article-list > .article-list-row.hot,
-html.darkmode #article-list > .article-list-row.hot {
-    background-color: var(--color-hot);
 }
 
 /* 공지글 표시 버튼 */
@@ -761,72 +785,59 @@ html.darkmode #article-list #article-list-category #board-home-link-btn {
     }
 }
 
+/* 페이지네이션 컨트롤 */
 .pagination {
     height: 30px;
     border-radius: 0;
-}
 
-.pagination > li > a,
-.pagination > li > span,
-html.darkmode .pagination > li > a,
-html.darkmode .pagination > li > span {
-    border: 0 !important;
-    border-top: 1px solid var(--color-sig) !important;
-    border-bottom: 1px solid var(--color-sig) !important;
-    background: var(--color-sig);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px 10px;
-    min-width: 30px;
-    height: 100%;
-    font-weight: 600 !important;
-    line-height: 15px !important;
-}
+    & li,
+    .darkmode && li {
+        & a,
+        & span {
+            border: 0 !important;
+            border-top: 1px solid var(--color-sig) !important;
+            border-bottom: 1px solid var(--color-sig) !important;
+            background: var(--color-sig);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px 10px;
+            min-width: 30px;
+            height: 100%;
+            font-weight: 600 !important;
+            line-height: 15px !important;
 
-.pagination > li > a:first-child,
-.pagination > li > span:first-child,
-html.darkmode .pagination > li > a:first-child,
-html.darkmode .pagination > li > span:first-child {
-    border-left: 1px solid var(--color-sig) !important;
-    border-radius: 0;
-}
+            &:first-child {
+                border-left: 1px solid var(--color-sig) !important;
+                border-radius: 0;
+            }
 
-.pagination > li > a:last-child,
-.pagination > li > span:last-child,
-html.darkmode .pagination > li > a:last-child,
-html.darkmode .pagination > li > span:last-child {
-    border-right: 1px solid var(--color-sig) !important;
-    border-radius: 0;
-}
+            &:last-child {
+                border-right: 1px solid var(--color-sig) !important;
+                border-radius: 0;
+            }
 
-.pagination > li > a:hover,
-.pagination > li > a:focus,
-.pagination > li > span:hover,
-.pagination > li > span:focus,
-html.darkmode .pagination > li > a:hover,
-html.darkmode .pagination > li > a:focus,
-html.darkmode .pagination > li > span:hover,
-html.darkmode .pagination > li > span:focus {
-    color: var(--color-sig);
-    background: var(--color-fr);
-}
+            &:hover,
+            &:focus {
+                color: var(--color-sig);
+                background: var(--color-fr);
+            }
+        }
 
-.pagination > .active > a,
-.pagination > .active > a:hover,
-.pagination > .active > a:focus,
-.pagination > .active > span,
-.pagination > .active > span:hover,
-.pagination > .active > span:focus,
-html.darkmode .pagination > .active > a,
-html.darkmode .pagination > .active > a:hover,
-html.darkmode .pagination > .active > a:focus,
-html.darkmode .pagination > .active > span,
-html.darkmode .pagination > .active > span:hover,
-html.darkmode .pagination > .active > span:focus {
-    color: var(--color-sig);
-    background: var(--color-fr);
+        /* 활성화 페이지 버튼 */
+        &.active {
+            & a,
+            & span {
+                &,
+                &:hover,
+                &:focus {
+                    color: var(--color-sig);
+                    background: var(--color-fr);
+                }
+            }
+        }
+    }
 }
 
 #article-list #boardSearchForm .form-control,
