@@ -258,6 +258,11 @@ header #header-bar > .row {
     gap: var(--btnwidth);
 }
 
+/* pv - 드롭다운 */
+header #header-bar a.dropdown-toggle {
+    vertical-align: initial;
+}
+
 #latestDropdown,
 #favoriteDropdown,
 /* #playgroundDropdown, */
@@ -274,12 +279,12 @@ header #header-bar > .row {
 
 #latestDropdown > i,
 #favoriteDropdown > i,
-#playgroundDropdown > i,
+/* #playgroundDropdown > i, */
 .fa-envelope-o,
 #userDropdown > img,
 #latestDropdown > span,
-/* #favoriteDropdown > span, */
-#playgroundDropdown > span,
+#favoriteDropdown > span,
+/* #playgroundDropdown > span, */
 #userDropdown > span.caret,
 #header-menu-right > div:nth-child(1) > a > span.caret {
     display: none;
