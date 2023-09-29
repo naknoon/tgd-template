@@ -408,6 +408,11 @@ header #right-search-form {
         &:focus {
             background-color: var(--color-hov) !important;
         }
+
+        /* NEW 배지 */
+        & sup {
+            color: var(--color-ntb) !important;
+        }
     }
 
     .spacer,
@@ -421,11 +426,6 @@ header #right-search-form {
     #fav-shortcut-area > a .darkmode & #fav-shortcut-area > a {
         > em {
             color: var(--color-sig);
-        }
-
-        /* NEW 배지 */
-        & a > sup {
-            color: var(--color-ntb) !important;
         }
     }
 
