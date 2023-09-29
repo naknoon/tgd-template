@@ -423,8 +423,8 @@ header #right-search-form {
             color: var(--color-sig);
         }
 
-        /* pv - NEW 뱃지 */
-        #main .menu-wrapper > a > sup {
+        /* NEW 배지 */
+        & a > sup {
             color: var(--color-ntb) !important;
         }
     }
