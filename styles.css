@@ -448,6 +448,20 @@ header #right-search-form {
     }
 }
 
+/* pv - 유용한 링크 */
+#main #extra-links.menu-wrapper {
+    > .header {
+        & i.fa-bars {
+            &::before {
+                content: "\f0d7";
+            }
+        }
+        & i.pull-right {
+            display: none;
+        }
+    }
+}
+
 /* 게시글 목록 광고 */
 #article-list > div:nth-child(3):not(#article-list > .article-list-row, #article-list-menu),
 html.darkmode #article-list > div:nth-child(3):not(#article-list > .article-list-row, #article-list-menu) {
