@@ -57,7 +57,6 @@ html.darkmode body {
     color: #fff !important;
     background-color: var(--color-sig) !important;
     border: 1px solid var(--color-sig) !important;
-    border-radius: 0;
     display: inline-flex;
     height: 30px;
     align-items: center;
@@ -70,6 +69,10 @@ html.darkmode body {
     &:focus {
         color: var(--color-sig) !important;
         background-color: var(--color-fr) !important;
+    }
+
+    &.square {
+        border-radius: 5px;
     }
 }
 
@@ -387,6 +390,8 @@ header #right-search-form {
 #main .menu-wrapper {
     background: var(--color-fr) !important;
     border: 1px solid var(--color-sig) !important;
+    border-radius: 5px;
+    overflow: hidden;
 
     .header,
     .darkmode & div.header {
@@ -849,6 +854,16 @@ html.darkmode #main-menu div[align="center"][style="background:#fff;padding:10px
 /* 게시글 검색 */
 #article-list #boardSearchForm,
 html.darkmode #article-list #boardSearchForm {
+    display: flex;
+
+    .input-group-btn:first-of-type {
+        width: fit-content;
+        > .btn {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    }
+
     .form-control {
         height: 30px !important;
         background: var(--color-fr) !important;
@@ -867,8 +882,21 @@ html.darkmode #article-list #boardSearchForm {
         }
     }
 
-    .input-group-btn i.fa-search {
-        color: #fff;
+    .input-group-btn:last-of-type {
+        width: fit-content;
+
+        .btn {
+            & i.fa-search {
+                color: #fff;
+            }
+
+            &:hover,
+            &:focus {
+                & i.fa-search {
+                    color: var(--color-sig);
+                }
+            }
+        }
     }
 }
 
