@@ -1324,6 +1324,11 @@ html.darkmode #article-list #article-list-category {
     }
 }
 
+/* 글쓰기 에디터 프레임 */
+div.frame[style="padding: .5em 1em;"] {
+    padding: 1em !important;
+}
+
 /* 글쓰기 에디터 */
 #articleWriteForm {
     padding-top: 1em;
@@ -1450,27 +1455,55 @@ html.darkmode #article-list #article-list-category {
 
 /* 에디터 v2 */
 #articleWriteForm .fr-box.tgd-editor-v2 {
+    --editorbgcolor: var(--color-fr);
     border-radius: 5px;
+
+    .fr-toolbar,
+    .fr-popup,
+    .fr-modal {
+        .fr-command.fr-btn {
+            & svg path {
+                fill: var(--color-sig);
+            }
+        }
+
+        .fr-btn-grp,
+        .fr-more-toolbar,
+        .fr-buttons:not(.fr-tabs) {
+            .fr-command.fr-btn.fr-active:not(.fr-dropdown) {
+                & svg path {
+                    fill: #0098f7;
+                }
+            }
+        }
+    }
 
     .fr-toolbar.fr-top {
         border: 1px solid var(--color-sig);
         border-radius: 5px 5px 0 0;
         border-bottom: 0;
+        background: var(--editorbgcolor);
 
         .fr-newline {
             background: var(--color-sig);
+        }
+
+        .fr-more-toolbar {
+            background-color: var(--color-noti);
         }
     }
 
     .fr-wrapper {
         border: 1px solid var(--color-sig);
         border-top: 0;
+        background: var(--editorbgcolor);
     }
 
     .fr-second-toolbar {
         border: 1px solid var(--color-sig);
         border-top: 0;
         border-radius: 0 0 5px 5px;
+        background: var(--editorbgcolor);
     }
 }
 
