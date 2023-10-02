@@ -798,8 +798,7 @@ html.darkmode #main-menu div[align="center"][style="background:#fff;padding:10px
 
     & li,
     .darkmode && li {
-        & a,
-        & span {
+        & a {
             border: 0 !important;
             border-top: 1px solid var(--color-sig) !important;
             border-bottom: 1px solid var(--color-sig) !important;
@@ -813,6 +812,27 @@ html.darkmode #main-menu div[align="center"][style="background:#fff;padding:10px
             height: 100%;
             font-weight: 600 !important;
             line-height: 15px !important;
+
+            &[rel] {
+                font-size: 0;
+
+                &::before {
+                    font-size: 14px;
+                    font-weight: normal;
+                }
+
+                &[rel="next"]::before {
+                    content: "\f105";
+                }
+
+                &[rel="prev"]::before {
+                    content: "\f104";
+                }
+
+                &[rel="start"]::before {
+                    content: "\f100";
+                }
+            }
 
             &:first-child {
                 border-left: 1px solid var(--color-sig) !important;
