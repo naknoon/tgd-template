@@ -184,7 +184,6 @@ header .row {
 /* 게시판 목록 (구)전광판 */
 header #header-bar {
     margin: 0 auto;
-    background: rgb(28, 30, 33, 0.5);
     height: 30px;
     width: 100%;
     display: flex;
@@ -233,17 +232,40 @@ header #header-bar > .row {
         align-items: center;
         order: 2;
         border: 0;
+        padding: 0 15px;
 
-        .dropdown-toggle {
-            color: #fff;
+        .dropdown {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 20px;
+
+            .dropdown-toggle {
+                width: 20px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+
+                color: #fff;
+            }
         }
 
         #board-list-area {
             flex: initial;
             width: fit-content;
             height: 30px;
+
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
             & a {
                 color: #fff;
+                line-height: normal;
+                padding: 3px 10px;
+                border-radius: 50px;
+                margin: 0;
+                background: var(--color-sigk);
             }
         }
     }
