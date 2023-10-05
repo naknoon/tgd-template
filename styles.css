@@ -114,6 +114,9 @@ header {
     top: calc(-290px + 50px);
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
 
+    display: flex;
+    flex-direction: column;
+
     &::before {
         content: "";
         position: absolute;
@@ -178,10 +181,10 @@ header .row {
     }
 }
 
-/* 전광판 */
+/* 게시판 목록 (구)전광판 */
 header #header-bar {
     margin: 0 auto;
-    background: var(--color-sig);
+    background: rgb(28, 30, 33, 0.5);
     height: 30px;
     width: 100%;
     display: flex;
@@ -189,7 +192,7 @@ header #header-bar {
     align-items: center;
 
     &::before {
-        content: "전광판에서 여러분의 광고를 여기에 올릴 수 있어요";
+        content: "";
         position: absolute;
         color: rgb(255 255 255 / 65%) !important;
         font-size: 13px;
@@ -198,30 +201,6 @@ header #header-bar {
         line-height: 30px;
         text-align: center;
     }
-
-    & #header-top-notice {
-        position: absolute;
-        height: 30px;
-        line-height: 30px;
-        padding: 0;
-        top: 50px;
-
-        color: rgb(255 255 255 / 60%);
-        font-size: 13px;
-        font-weight: 500;
-        background: var(--color-sig);
-
-        & a {
-            color: rgb(255 255 255 / 60%);
-            font-size: 13px;
-            font-weight: 500;
-        }
-
-        & strong.notice-badge {
-            font-size: 0;
-            padding: 0;
-        }
-    }
 }
 
 /* 글로벌 네비게이션 바 */
@@ -229,20 +208,50 @@ header #header-bar > .row {
     --btnwidth: calc(calc(700px - calc(100px * 5)) / 4);
 
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     width: 700px;
     margin: 0;
     padding: 0;
     background: transparent !important;
     border: none !important;
-    gap: var(--btnwidth);
     position: absolute;
     top: 0;
     z-index: 999;
 
-    & #header-menu-left,
+    & > div:not(id) {
+        display: none;
+    }
+
+    & #header-menu-left {
+        position: absolute;
+        top: 50px;
+        width: 1100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        order: 2;
+        border: 0;
+
+        .dropdown-toggle {
+            color: #fff;
+        }
+
+        #board-list-area {
+            flex: initial;
+            width: fit-content;
+            height: 30px;
+            & a {
+                color: #fff;
+            }
+        }
+    }
+
     & #header-menu-right {
+        order: 1;
         display: inline-flex;
+        justify-content: center;
         float: none;
         border: none !important;
         width: auto;
@@ -272,14 +281,6 @@ header #header-bar > .row {
                 font-weight: 500;
                 white-space: nowrap;
                 font-size: 14px;
-            }
-
-            &#latestDropdown::before {
-                content: "최근 방문" !important;
-            }
-
-            &#favoriteDropdown::before {
-                content: "즐겨찾기" !important;
             }
 
             &[href="/note/lists"]::before {
