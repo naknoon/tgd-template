@@ -118,9 +118,10 @@ header {
     flex-direction: column;
 
     &::before {
+        order: 1;
         content: "";
         position: absolute;
-        top: 0;
+        top: 30px;
         left: 0;
         width: 100%;
         min-width: 1100px;
@@ -129,6 +130,7 @@ header {
     }
 
     &::after {
+        order: 3;
         content: "";
         background: var(--url-logo) no-repeat;
         background-size: auto 80px;
@@ -140,6 +142,7 @@ header {
     }
 
     > div.container:nth-child(1) {
+        order: 2;
         position: sticky;
         top: 0;
         z-index: 998;
@@ -148,6 +151,7 @@ header {
 
 /* 로고 */
 header .row {
+    order: 0;
     > div:nth-child(1) {
         > a {
             --logo-pdw: 12px;
@@ -183,6 +187,7 @@ header .row {
 
 /* 게시판 목록 (구)전광판 */
 header #header-bar {
+    order: 0;
     margin: 0 auto;
     background: rgb(28, 30, 33, 0.5);
     height: 30px;
@@ -190,6 +195,9 @@ header #header-bar {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: sticky;
+    z-index: 999;
+    top: -30px;
 
     &::before {
         content: "";
@@ -216,8 +224,6 @@ header #header-bar > .row {
     padding: 0;
     background: transparent !important;
     border: none !important;
-    position: absolute;
-    top: 0;
     z-index: 999;
 
     & > div:not(id) {
@@ -225,13 +231,11 @@ header #header-bar > .row {
     }
 
     & #header-menu-left {
-        position: absolute;
-        top: 50px;
+        order: 0;
         width: 1100px;
         display: flex;
         justify-content: center;
         align-items: center;
-        order: 2;
         border: 0;
 
         .dropdown-toggle {
