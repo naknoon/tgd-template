@@ -500,7 +500,7 @@ html.darkmode #article-list > div:nth-child(3):not(#article-list > .article-list
 }
 
 /* 게시글 내부 광고 */
-#main-content > div > div:nth-child(2):not(#article-list) {
+#main-content > div > div:nth-child(2):not(#article-list, #board-profile) {
     background: var(--color-noti) !important;
     padding: 10px 8px !important;
 
@@ -620,6 +620,13 @@ html.darkmode #main-menu div[align="center"][style="background:#fff;padding:10px
             }
         }
     }
+}
+
+/* 대문 영역 */
+#board-profile {
+    background-color: var(--color-noti);
+    padding: 1em;
+    overflow: hidden;
 }
 
 /* 게시글 목록 */
