@@ -13,6 +13,8 @@
     --color-ntb: #e7524c;
     --color-eda: #1e88e5;
     --font-pro: Fontawesome, "Pretendard Variable";
+
+    --sticky-header-height: 50px;
 }
 
 :focus:not(:focus-visible) {
@@ -76,17 +78,6 @@ html.darkmode body {
 /* 하이퍼링크 */
 p a[href] {
     color: var(--color-lin) !important;
-}
-
-.fr-sticky-off,
-.fr-sticky-on {
-    z-index: 2 !important;
-    position: relative;
-}
-
-.fr-sticky-on + .fr-sticky-dummy,
-.fr-sticky-box > .fr-sticky-dummy {
-    display: none !important;
 }
 
 @keyframes gradient {
@@ -1294,143 +1285,189 @@ html.darkmode #article-list #article-list-category {
     }
 }
 
-/* 글쓰기 에디터 프레임 */
-div.frame[style="padding: .5em 1em;"] {
-    padding: 1em !important;
-}
-
 /* 글쓰기 에디터 */
-#articleWriteForm {
-    padding-top: 1em;
-
-    & div.mt-2 {
-        > .opt:first-child {
-            font-weight: 600;
-            padding: 0 10px;
-            background: var(--color-sig);
-            color: #fff;
-        }
-    }
+.frame[style="padding: 1.5em 1em 2em;"] {
+    padding: 15px !important;
 }
 
-/* 제목 옵션 */
-#articleWriteForm div.mt-2:first-of-type {
-    background: transparent;
-    margin: 0;
-    display: flex;
-    gap: 0.5em;
-
-    & div {
-        padding: 0 !important;
+#articleWriteForm {
+    #board-write-header {
+        font-size: 16px;
     }
 
-    /* 아이콘 선택기 */
-    .dropdown {
-        height: 100%;
+    #article-title-bar {
+        background: transparent;
+        margin: 0;
+        display: flex;
+        gap: 0.5em;
 
-        #select-icon-dropdown-btn {
-            width: 34px;
+        & div {
+            padding: 0 !important;
+        }
+
+        /* 아이콘 선택기 */
+        .dropdown {
             height: 100%;
+
+            #select-icon-dropdown-btn {
+                width: 34px;
+                height: 100%;
+                border-radius: 5px;
+                background-color: var(--color-fr) !important;
+                color: var(--color-sig) !important;
+
+                .emt img {
+                    height: 18px;
+                }
+
+                .caret {
+                    display: none;
+                }
+            }
+        }
+
+        .form-control[name="title"],
+        .form-control[name="category_id"] {
+            box-shadow: none;
+            background: var(--color-fr);
+            border: 1px solid var(--color-sig);
             border-radius: 5px;
-            background-color: var(--color-fr) !important;
-            color: var(--color-sig) !important;
+            padding: 0 10px !important;
+        }
 
-            .emt img {
-                height: 18px;
-            }
-
-            .caret {
-                display: none;
-            }
+        /* 카테고리 */
+        .form-control[name="category_id"] {
+            appearance: none;
         }
     }
 
-    .form-control[name="title"],
-    .form-control[name="category_id"] {
-        box-shadow: none;
-        background: var(--color-fr);
-        border: 1px solid var(--color-sig);
-        border-radius: 5px;
-        padding: 0 10px !important;
-    }
+    .editor-sidebar {
+        padding-right: 15px;
+        top: calc(50px + 15px);
 
-    /* 카테고리 */
-    .form-control[name="category_id"] {
-        appearance: none;
+        /* 기능 버튼 */
+        .action--btn {
+            padding: 0;
+
+            .btn {
+                padding: 0;
+            }
+
+            /* 작성취소 */
+            > a {
+                background-color: var(--color-sigr) !important;
+                border-color: var(--color-sigr) !important;
+
+                &::before {
+                    font-family: "FontAwesome";
+                    content: "\f1f8  ";
+                    font-size: 14px;
+                }
+
+                &:hover,
+                &:focus {
+                    background-color: var(--color-fr) !important;
+                    border-color: var(--color-sigr) !important;
+                    color: var(--color-sigr) !important;
+                }
+            }
+        }
+
+        .opt[for="title_color"] {
+            width: 120px !important;
+
+            #title_color {
+                & input {
+                    text-align: center;
+                    border: 0;
+                    border-radius: 0;
+                    border: solid var(--color-sig);
+                    border-width: 4px 0 1px 1px;
+                }
+
+                & span {
+                    border: 0;
+                    border-radius: 0;
+                    border: 1px solid var(--color-sig);
+                    line-height: initial;
+                    padding: 5px 6px;
+                }
+            }
+        }
     }
 }
 
-#articleWriteForm {
-    & span.opt {
-        display: none;
-    }
+/* .fr-toolbar .fr-command.fr-btn.fr-open:not(:hover):not(:focus):not(:active) {
+    background-color: var(--color-noti);
+} */
 
-    .opt[for="title_color"] {
-        width: 120px !important;
-
-        #title_color {
-            & input {
-                text-align: center;
-                border: 0;
-                border-radius: 0;
-                border: solid var(--color-sig);
-                border-width: 4px 0 1px 1px;
-            }
-
-            & span {
-                border: 0;
-                border-radius: 0;
-                border: 1px solid var(--color-sig);
-                line-height: initial;
-                padding: 5px 6px;
+/* .darkmode {
+    .fr-desktop {
+        .fr-command {
+            &:hover,
+            &:focus,
+            &.fr-btn-hover,
+            &.fr-expanded {
+                &:not(.fr-table-cell) {
+                    background-color: #4f4f4f;
+                }
             }
         }
     }
-}
 
-/* 기능 버튼 */
-#articleWriteForm div.mt-2.action--btn {
-    background: transparent;
-    margin-top: 1.5em;
-
-    /* 작성취소 */
-    > a {
-        height: 34px;
-        background-color: var(--color-sigr) !important;
-        border-color: var(--color-sigr) !important;
-
-        &::before {
-            font-family: "FontAwesome";
-            content: "\f1f8  ";
-            font-size: 14px;
-        }
-
-        &:hover,
-        &:focus {
-            background-color: var(--color-fr) !important;
-            border-color: var(--color-sigr) !important;
-            color: var(--color-sigr) !important;
+    .fr-toolbar,
+    .fr-popup,
+    .fr-modal {
+        .fr-command.fr-btn.fr-btn-active-popup {
+            background-color: #4f4f4f;
         }
     }
 
-    /* 쓰기 */
-    #article-write-button {
-        height: 34px;
+    .fr-popup {
+        background-color: var(--color-fr);
+        color: #fff;
+
+        .fr-buttons.fr-tabs {
+            background-color: var(--color-hot);
+        }
+
+        .fr-input-line input,
+        .fr-input-line textarea {
+            &[type="text"],
+            &[type="number"] {
+                color: #fff;
+                background-color: var(--color-fr);
+            }
+
+            + label {
+                background-color: var(--color-fr);
+            }
+        }
     }
-}
+} */
 
 /* 에디터 v2 */
 #articleWriteForm .fr-box.tgd-editor-v2 {
     --editorbgcolor: var(--color-fr);
     border-radius: 5px;
 
-    /* 에디터 기능 버튼 */
+    /* 에디터 기능 버튼
     .fr-toolbar,
     .fr-popup,
     .fr-modal {
         .fr-command.fr-btn {
             & svg path {
                 fill: var(--color-sig);
+            }
+
+            &.fr-dropdown {
+                &::after {
+                    border-top-color: var(--color-sig);
+                }
+
+                &.fr-active::after {
+                    border-bottom-color: var(--color-sig);
+                }
             }
         }
 
@@ -1443,7 +1480,7 @@ div.frame[style="padding: .5em 1em;"] {
                 }
             }
         }
-    }
+    } */
 
     .fr-toolbar.fr-top {
         border: 1px solid var(--color-sig);
@@ -1457,6 +1494,18 @@ div.frame[style="padding: .5em 1em;"] {
 
         .fr-more-toolbar {
             background-color: var(--color-noti);
+        }
+
+        &.fr-sticky-on {
+            z-index: 100 !important;
+            position: relative;
+            /* z-index: 100;
+            top: calc(50px + 15px) !important;
+            box-shadow: 0px -25px 0px -1px var(--color-fr); */
+
+            + .fr-sticky-dummy {
+                display: none !important;
+            }
         }
     }
 
