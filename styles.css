@@ -1324,6 +1324,12 @@ html.darkmode #article-list #article-list-category {
                     display: none;
                 }
             }
+
+            #select-icon-dropdown {
+                & a.custom-badge-link {
+                    border: none;
+                }
+            }
         }
 
         .form-control[name="title"],
@@ -1346,43 +1352,16 @@ html.darkmode #article-list #article-list-category {
         top: calc(50px + 15px);
 
         /* 기능 버튼 */
-        .action--btn {
-            padding: 0;
-
-            .btn {
-                padding: 0;
-            }
-
-            /* 작성취소 */
-            > a {
-                background-color: var(--color-sigr) !important;
-                border-color: var(--color-sigr) !important;
-
-                &::before {
-                    font-family: "FontAwesome";
-                    content: "\f1f8  ";
-                    font-size: 14px;
-                }
-
-                &:hover,
-                &:focus {
-                    background-color: var(--color-fr) !important;
-                    border-color: var(--color-sigr) !important;
-                    color: var(--color-sigr) !important;
-                }
-            }
-        }
-
         .opt[for="title_color"] {
-            width: 120px !important;
+            width: 110px !important;
 
             #title_color {
                 & input {
                     text-align: center;
-                    border: 0;
                     border-radius: 0;
-                    border: solid var(--color-sig);
-                    border-width: 4px 0 1px 1px;
+                    border: 1px solid var(--color-sig);
+                    border-right: 0;
+                    padding: 0;
                 }
 
                 & span {
@@ -1397,103 +1376,18 @@ html.darkmode #article-list #article-list-category {
     }
 }
 
-/* .fr-toolbar .fr-command.fr-btn.fr-open:not(:hover):not(:focus):not(:active) {
-    background-color: var(--color-noti);
-} */
-
-/* .darkmode {
-    .fr-desktop {
-        .fr-command {
-            &:hover,
-            &:focus,
-            &.fr-btn-hover,
-            &.fr-expanded {
-                &:not(.fr-table-cell) {
-                    background-color: #4f4f4f;
-                }
-            }
-        }
-    }
-
-    .fr-toolbar,
-    .fr-popup,
-    .fr-modal {
-        .fr-command.fr-btn.fr-btn-active-popup {
-            background-color: #4f4f4f;
-        }
-    }
-
-    .fr-popup {
-        background-color: var(--color-fr);
-        color: #fff;
-
-        .fr-buttons.fr-tabs {
-            background-color: var(--color-hot);
-        }
-
-        .fr-input-line input,
-        .fr-input-line textarea {
-            &[type="text"],
-            &[type="number"] {
-                color: #fff;
-                background-color: var(--color-fr);
-            }
-
-            + label {
-                background-color: var(--color-fr);
-            }
-        }
-    }
-} */
-
 /* 에디터 v2 */
 #articleWriteForm .fr-box.tgd-editor-v2 {
-    --editorbgcolor: var(--color-fr);
     border-radius: 5px;
-
-    /* 에디터 기능 버튼
-    .fr-toolbar,
-    .fr-popup,
-    .fr-modal {
-        .fr-command.fr-btn {
-            & svg path {
-                fill: var(--color-sig);
-            }
-
-            &.fr-dropdown {
-                &::after {
-                    border-top-color: var(--color-sig);
-                }
-
-                &.fr-active::after {
-                    border-bottom-color: var(--color-sig);
-                }
-            }
-        }
-
-        .fr-btn-grp,
-        .fr-more-toolbar,
-        .fr-buttons:not(.fr-tabs) {
-            .fr-command.fr-btn.fr-active:not(.fr-dropdown) {
-                & svg path {
-                    fill: #0098f7;
-                }
-            }
-        }
-    } */
 
     .fr-toolbar.fr-top {
         border: 1px solid var(--color-sig);
         border-radius: 5px 5px 0 0;
         border-bottom: 0;
-        background: var(--editorbgcolor);
+        background: var(--color-fr);
 
         .fr-newline {
             background: var(--color-sig);
-        }
-
-        .fr-more-toolbar {
-            background-color: var(--color-noti);
         }
 
         &.fr-sticky-on {
@@ -1512,23 +1406,14 @@ html.darkmode #article-list #article-list-category {
     .fr-wrapper {
         border: 1px solid var(--color-sig);
         border-top: 0;
-        background: var(--editorbgcolor);
-
-        /* pv - 텍스트 색상: 실제 아티클 표현과 동기화 필요 */
-        .fr-element {
-            color: #414141; /* default */
-
-            .darkmode & {
-                color: #cccccc;
-            }
-        }
+        background: var(--color-fr);
     }
 
     .fr-second-toolbar {
         border: 1px solid var(--color-sig);
         border-top: 0;
         border-radius: 0 0 5px 5px;
-        background: var(--editorbgcolor);
+        background: var(--color-fr);
     }
 }
 
