@@ -13,8 +13,12 @@
     --color-ntb: #e7524c;
     --color-eda: #1e88e5;
     --font-pro: Fontawesome, "Pretendard Variable";
+}
 
-    --sticky-header-height: 50px;
+:root {
+    --header_area_height: 270px;
+    --header_sticky_height: 50px;
+    --header_board_height: 30px;
 }
 
 :focus:not(:focus-visible) {
@@ -93,7 +97,7 @@ p a[href] {
 /* 헤더 배너 */
 header {
     padding: 0;
-    height: 290px;
+    height: var(--header_area_height);
     min-width: 1100px;
     z-index: 103;
     margin-bottom: 15px;
@@ -102,7 +106,7 @@ header {
     background-size: 400% 400%;
     animation: gradient 7s ease infinite alternate;
     position: sticky;
-    top: calc(-290px + 50px);
+    top: calc(-1 * var(--header_area_height) + var(--header_sticky_height));
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
 
     display: flex;
@@ -115,7 +119,7 @@ header {
         left: 0;
         width: 100%;
         min-width: 1100px;
-        height: 50px;
+        height: var(--header_sticky_height);
         background-color: var(--color-sigk);
     }
 
@@ -125,7 +129,7 @@ header {
         background-size: auto 80px;
         background-position: center center;
         width: 100%;
-        height: calc(290px - 50px - 30px);
+        height: calc(var(--header_area_height) - var(--header_sticky_height) - var(--header_board_height));
         display: block;
         filter: drop-shadow(3px 3px 2px rgb(0 0 0 / 50%));
     }
