@@ -218,7 +218,8 @@ header #header-bar > .row {
 		display: none;
 	}
 
-	& #header-menu-left {
+	& #header-menu-left,
+	.darkmode & #header-menu-left {
 		position: absolute;
 		top: 50px;
 		width: 700px;
@@ -453,7 +454,7 @@ header #right-search-form {
 	}
 
 	> a,
-	.darkmode & > a {
+	.darkmode && > a {
 		> em {
 			color: var(--color-sig);
 		}
@@ -596,7 +597,7 @@ html.darkmode #main-menu div[align="center"][style="background:#fff;padding:10px
 		margin: 0 !important;
 
 		> a,
-		.darkmode & > a {
+		.darkmode && > a {
 			color: #fff;
 			font-size: 0;
 			height: fit-content;
