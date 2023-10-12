@@ -530,6 +530,10 @@ html.darkmode #main-menu div[align="center"][style="background:#fff;padding:10px
 	align-content: space-between;
 	justify-content: space-between;
 
+	&::after {
+		display: none;
+	}
+
 	& h1,
 	.darkmode && h1 {
 		padding: 0;
@@ -562,13 +566,19 @@ html.darkmode #main-menu div[align="center"][style="background:#fff;padding:10px
 		border-radius: 10px;
 	}
 
-	#viewers-area #viewers {
-		&::before {
-			content: "";
+	#viewers-area {
+		.fa-user::before {
+			content: "\f2dc";
 		}
 
-		&::after {
-			content: "명이 노는 중";
+		#viewers {
+			&::before {
+				content: "적설량 ";
+			}
+
+			&::after {
+				content: "cm";
+			}
 		}
 	}
 
@@ -585,8 +595,8 @@ html.darkmode #main-menu div[align="center"][style="background:#fff;padding:10px
 		padding: 0 !important;
 		margin: 0 !important;
 
-		& a,
-		.darkmode && a {
+		> a,
+		.darkmode & > a {
 			color: #fff;
 			font-size: 0;
 			height: fit-content;
@@ -602,6 +612,11 @@ html.darkmode #main-menu div[align="center"][style="background:#fff;padding:10px
 				text-align: center;
 				font-size: 18px;
 			}
+		}
+
+		#alertDropdown {
+			top: 100% !important;
+			left: 0 !important;
 		}
 	}
 }
