@@ -826,7 +826,6 @@ html.darkmode #main-menu div[align="center"][style="background:#fff;padding:10px
 	height: 30px;
 	border-radius: 0;
 
-<<<<<<< HEAD
 	& li,
 	.darkmode && li {
 		& a {
@@ -846,50 +845,6 @@ html.darkmode #main-menu div[align="center"][style="background:#fff;padding:10px
 
 			&[rel] {
 				font-size: 0;
-=======
-    & li,
-    .darkmode && li {
-        & a {
-            border: 0 !important;
-            border-top: 1px solid var(--color-sig) !important;
-            border-bottom: 1px solid var(--color-sig) !important;
-            background: var(--color-sig);
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 5px 10px;
-            min-width: 30px;
-            height: 100%;
-            font-weight: 600 !important;
-            line-height: 15px !important;
-
-            &[rel] {
-                font-size: 0;
-
-                &::before {
-                    font-size: 14px;
-                    font-weight: normal;
-                }
-
-                &[rel="next"]::before {
-                    content: "\f105";
-                }
-
-                &[rel="prev"]::before {
-                    content: "\f104";
-                }
-
-                &[rel="start"]::before {
-                    content: "\f100";
-                }
-            }
-
-            &:first-child {
-                border-left: 1px solid var(--color-sig) !important;
-                border-radius: 0;
-            }
->>>>>>> refs/remotes/origin/fix/display
 
 				&::before {
 					font-size: 14px;
@@ -944,7 +899,6 @@ html.darkmode #main-menu div[align="center"][style="background:#fff;padding:10px
 /* 게시글 검색 */
 #article-list #boardSearchForm,
 html.darkmode #article-list #boardSearchForm {
-<<<<<<< HEAD
 	display: flex;
 
 	.input-group-btn:first-of-type {
@@ -982,45 +936,6 @@ html.darkmode #article-list #boardSearchForm {
 			}
 		}
 	}
-=======
-    display: flex;
-
-    .input-group-btn:first-of-type {
-        width: fit-content;
-    }
-
-    .form-control {
-        height: initial;
-        line-height: inherit;
-        background: var(--color-fr) !important;
-        padding: 0 10px;
-        color: var(--color-sig);
-        box-shadow: none;
-        border: none;
-        border-top: 1px solid var(--color-sig);
-        border-bottom: 1px solid var(--color-sig);
-    }
-
-    .input-group-btn:last-of-type {
-        width: fit-content;
-
-        .btn {
-            margin-left: 0;
-            z-index: initial;
-
-            & i.fa-search {
-                color: #fff;
-            }
-
-            &:hover,
-            &:focus {
-                & i.fa-search {
-                    color: var(--color-sig);
-                }
-            }
-        }
-    }
->>>>>>> refs/remotes/origin/fix/display
 }
 
 /* 카테고리 컨트롤 */
