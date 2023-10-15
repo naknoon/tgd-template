@@ -940,13 +940,8 @@ html.darkmode #main-menu div[align="center"][style="background:#fff;padding:10px
         /* 활성화 페이지 버튼 */
         &.active {
             & a {
-                color: #fff;
-                background: var(--color-sig);
-
-                &:hover {
-                    color: var(--color-sig);
-                    background: var(--color-hov) !important;
-                }
+                color: #fff !important;
+                background: var(--color-sig) !important;
             }
         }
     }
