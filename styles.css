@@ -819,6 +819,40 @@ html.darkmode #main-menu div[align="center"][style="background:#fff;padding:10px
             }
         }
     }
+
+    /* 게시글 액션 버튼 */
+    #article_action_wrap___DO_NOT_MODIFY,
+    .darkmode && #article_action_wrap___DO_NOT_MODIFY {
+        border-color: var(--color-sig);
+        border-radius: 0;
+        background-color: var(--color-fr);
+        display: flex;
+        flex-direction: column;
+
+        & a {
+            color: var(--color-sig);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 26px;
+
+            &[href="#article-list"] {
+                order: 5;
+
+                & i::before {
+                    content: "\f00b";
+                }
+            }
+
+            &[href="#article-reply-area"] i::before {
+                content: "\f086";
+            }
+
+            &:hover {
+                background: var(--color-hov);
+            }
+        }
+    }
 }
 
 /* 공지글 표시 버튼 */
@@ -1157,59 +1191,98 @@ html.darkmode #article-list #article-list-category {
             color: #dfdfdf !important;
         }
     }
+}
 
-    /* 투표 */
-    .vote-area,
-    .darkmode & .vote-area {
-        padding: 1em 0.8em;
-        border: 0;
+/* 게시글 추천 영역 */
+#article-content-wrapper .vote-area,
+html.darkmode #article-content-wrapper .vote-area {
+    --bubble-tail: 6px;
+
+    padding: 1em 0.8em;
+    border: 0;
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+
+    > .btn {
         display: flex;
         justify-content: center;
-        gap: 1em;
+        align-items: center;
+        gap: 5px;
 
-        > button {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-size: 0;
-            width: 75px;
-            height: 75px;
-            border-radius: 200px;
+        position: relative;
+        width: fit-content;
+        height: 35px;
+        margin-bottom: var(--bubble-tail);
+        border-radius: 6px;
 
-            > i {
-                font-size: 22px !important;
+        font-size: 0px;
+        font-weight: bold;
+        color: #fff !important;
+
+        background-color: var(--bubble-color) !important;
+
+        > i {
+            font-size: 16px !important;
+            margin-right: -5px;
+        }
+
+        & span {
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 100%;
+            border: var(--bubble-tail) solid transparent;
+            border-top-color: var(--bubble-color) !important;
+        }
+
+        &:hover {
+            background-color: var(--color-fr) !important;
+            color: var(--bubble-color) !important;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 100%;
+
+                border: calc(var(--bubble-tail) - 1px) solid transparent;
+                border-top-color: var(--color-fr);
             }
+        }
 
-            & span {
-                font-size: 12px;
-                font-weight: 600;
+        &.vote-btn {
+            --bubble-color: var(--color-sig);
+        }
 
-                &::before {
-                    font-weight: 400;
-                    letter-spacing: -0.04em;
-                    margin-right: 2px;
-                }
+        &#open-donate-modal-btn {
+            --bubble-color: var(--color-ntb);
 
-                &#up::before {
-                    content: "추천";
-                }
+            & i {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                gap: 2px;
 
-                &#down::before {
-                    content: "비추천";
+                &::after {
+                    /* content: ""; */
+                    font-family: var(--font-pro);
+                    font-size: 12px;
                 }
             }
         }
     }
+}
 
-    /* 기능 */
-    & div.footer,
-    .darkmode && div.footer {
-        padding: 0.75em 1.5em;
-        background: var(--color-noti);
-        border: solid var(--color-sig);
-        border-width: 1px 0 1px 0;
-    }
+#article-content-wrapper .footer,
+html.darkmode #article-content-wrapper .footer {
+    padding: 0.75em 1.5em;
+    background: var(--color-noti);
+    border: solid var(--color-sig);
+    border-width: 1px 0px;
 }
 
 /* 주변(이웃)글 리스트 */
@@ -1376,6 +1449,14 @@ html.darkmode #article-list #article-list-category {
                 background: var(--color-hot);
             }
         }
+    }
+}
+
+/* 후원 댓글 */
+#article-reply-area.donate-mode {
+    /* 댓글 작성 버튼 */
+    #writeCommentBtn {
+        color: #fff !important;
     }
 }
 
