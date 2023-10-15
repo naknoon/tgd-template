@@ -880,15 +880,15 @@ html.darkmode #main-menu div[align="center"][style="background:#fff;padding:10px
 
 /* 페이지네이션 컨트롤 */
 #article-list .pagination {
+    display: inline-flex;
     height: 30px;
     border-radius: 0;
+    border: 1px solid var(--color-sig);
 
     & li,
     .darkmode && li {
         & a {
             border: 0 !important;
-            border-top: 1px solid var(--color-sig) !important;
-            border-bottom: 1px solid var(--color-sig) !important;
             background: var(--color-fr);
             color: var(--color-sig);
             display: flex;
@@ -899,6 +899,7 @@ html.darkmode #main-menu div[align="center"][style="background:#fff;padding:10px
             height: 100%;
             font-weight: 600 !important;
             line-height: 15px !important;
+            margin: 0;
 
             &[rel] {
                 font-size: 0;
@@ -908,32 +909,42 @@ html.darkmode #main-menu div[align="center"][style="background:#fff;padding:10px
                     font-weight: normal;
                 }
 
-                &[rel="next"]::before {
-                    content: "\f105";
+                &[rel="next"] {
+                    border-left: 1px solid var(--color-sig) !important;
+                    &::before {
+                        content: "\f105";
+                    }
                 }
 
-                &[rel="prev"]::before {
-                    content: "\f104";
+                &[rel="prev"] {
+                    border-right: 1px solid var(--color-sig) !important;
+                    &::before {
+                        content: "\f104";
+                    }
                 }
 
-                &[rel="start"]::before {
-                    content: "\f100";
+                &[rel="start"] {
+                    border-right: 1px solid var(--color-sig) !important;
+
+                    &::before {
+                        content: "\f100";
+                    }
                 }
-            }
-
-            &:first-child {
-                border-left: 1px solid var(--color-sig) !important;
-                border-radius: 0;
-            }
-
-            &:last-child {
-                border-right: 1px solid var(--color-sig) !important;
-                border-radius: 0;
             }
 
             &:hover {
                 color: var(--color-sig);
                 background: var(--color-hov) !important;
+            }
+        }
+
+        /* start가 맨 앞이 아닌 경우 */
+        &:has(a[rel="prev"]) + li > a[rel="start"] {
+            font-size: inherit;
+            border-right: 0 !important;
+
+            &::before {
+                content: none;
             }
         }
 
