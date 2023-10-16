@@ -491,7 +491,7 @@ header #right-search-form {
 	}
 
 	> .shortcut-link {
-		border-right: 5px solid;
+		border-right: 4px solid;
 		padding: 4px 10px;
 		display: flex;
 		justify-content: flex-start;
@@ -503,12 +503,15 @@ header #right-search-form {
 
 		&::before {
 			content: "\f1db";
+			color: var(--color-sig);
 			margin-right: 8px;
+			opacity: 0.5;
 		}
 
 		&.active {
 			&::before {
-				content: "\f111";
+				content: "\f058"; /* f111 */
+				opacity: 1;
 			}
 		}
 	}
