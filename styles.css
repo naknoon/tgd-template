@@ -496,7 +496,6 @@ header #right-search-form {
 		display: flex;
 		justify-content: flex-start;
 		align-items: center;
-		gap: 8px;
 
 		& em {
 			display: none;
@@ -504,6 +503,7 @@ header #right-search-form {
 
 		&::before {
 			content: "\f1db";
+			margin-right: 8px;
 		}
 
 		&.active {
