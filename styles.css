@@ -9,7 +9,7 @@
 :root {
     --color-sigr: #684545;
     --color-sigy: #b59653;
-    --color-sigk: #1c1e21;
+    --color-sigk: 216 8% 12%;
     --color-ntb: #e7524c;
     --color-eda: #1e88e5;
     --font-pro: Fontawesome, "Pretendard Variable";
@@ -132,6 +132,7 @@ header {
     position: sticky;
     top: calc(-1 * var(--header_area_height) + var(--header_sticky_height));
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
+    overflow-x: clip;
 
     display: flex;
     flex-direction: column;
@@ -139,12 +140,12 @@ header {
     &::before {
         content: "";
         position: absolute;
-        top: 0;
+        top: var(--header_board_height);
         left: 0;
         width: 100%;
         min-width: 1100px;
-        height: var(--header_sticky_height);
-        background-color: var(--color-sigk);
+        height: calc(var(--header_sticky_height));
+        background-color: hsl(var(--color-sigk) / 50%);
     }
 
     &::after {
@@ -161,17 +162,19 @@ header {
     > div.container:nth-child(1) {
         position: sticky;
         top: 0;
-        z-index: 998;
+        z-index: 103;
     }
 }
 
-/* 로고 */
+/* 트게더 로고 */
 header .row {
     > div:nth-child(1) {
+        z-index: 103;
+
         > a {
-            --logo-pdw: 12px;
-            --logo-pdh: calc(120px - calc(50px - var(--logo-pdw) * 2));
-            --logo-pd: var(--logo-pdw) var(--logo-pdh) var(--logo-pdw) 0;
+            --logo-pd-v: 12px;
+            --logo-pd-h: calc(120px - calc(50px - var(--logo-pd-v) * 2));
+            --logo-pd: var(--logo-pd-v) var(--logo-pd-h) var(--logo-pd-v) 0;
 
             & img {
                 content: url(https://cdn.discordapp.com/attachments/901132800793649233/936304107487129610/tgd_ico.png);
@@ -187,7 +190,7 @@ header .row {
                 font-weight: 600;
                 color: #fff;
                 line-height: 50px;
-                left: calc(15px + calc(50px - var(--logo-pdw) * 2) + 5px);
+                left: calc(15px + calc(50px - var(--logo-pd-v) * 2) + 5px);
             }
 
             &:hover,
@@ -200,24 +203,29 @@ header .row {
     }
 }
 
-/* 게시판 목록 (구)전광판 */
+/* 상단 기능바 */
 header #header-bar {
+    order: -1;
     margin: 0 auto;
-    height: 30px;
-    width: 100%;
+    height: var(--header_board_height);
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
+    padding: 0 15px;
+    position: sticky;
+    top: calc(-1 * var(--header_board_height));
+    z-index: 104;
 
     &::before {
         content: "";
         position: absolute;
-        color: rgb(255 255 255 / 65%) !important;
-        font-size: 13px;
-        font-weight: 500;
-        height: 30px;
-        line-height: 30px;
-        text-align: center;
+        width: 100vw;
+        min-width: 1100px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: hsl(var(--color-sigk));
+
+        height: var(--header_board_height);
     }
 }
 
@@ -227,16 +235,13 @@ header #header-bar > .row {
 
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     width: 700px;
     margin: 0;
     padding: 0;
     background: transparent !important;
     border: none !important;
-    position: absolute;
-    top: 0;
-    z-index: 999;
 
     & > div:not(id) {
         display: none;
@@ -244,28 +249,31 @@ header #header-bar > .row {
 
     & #header-menu-left,
     .darkmode & #header-menu-left {
-        position: absolute;
-        top: 50px;
         width: 700px;
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
-        order: 2;
         border: 0;
+        position: absolute;
+        top: 0;
 
+        /* 즐겨찾기 토글 */
         .dropdown {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 20px;
+
+            width: calc(15px + 8px);
 
             .dropdown-toggle {
-                width: 20px;
                 display: flex;
                 justify-content: flex-start;
                 align-items: center;
-
                 color: #fff;
+
+                .caret {
+                    margin-left: 0;
+                }
             }
         }
 
@@ -273,40 +281,46 @@ header #header-bar > .row {
         #board-list-area {
             flex: initial;
             width: fit-content;
-            height: 30px;
+            height: var(--header_board_height);
 
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 15px;
 
             & a {
-                color: #fff;
+                color: rgb(255, 255, 255);
                 line-height: normal;
-                padding: 3px 10px;
-                border-radius: 50px;
+                padding: 0px;
                 margin: 0;
 
-                &.favorite {
-                    background-color: rgb(28, 30, 33, 1);
+                display: flex;
+                gap: 8px;
 
+                &.favorite {
                     & i {
                         display: none;
                     }
                 }
 
                 &.recent {
-                    background-color: rgb(28, 30, 33, 0.5);
+                    color: rgb(255, 255, 255, 50%);
 
                     &:nth-of-type(n + 9) {
                         display: none;
                     }
+                }
+
+                &:hover span.delrow {
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0;
                 }
             }
         }
     }
 
     & #header-menu-right {
-        order: 1;
         display: inline-flex;
         justify-content: center;
         float: none;
@@ -316,12 +330,15 @@ header #header-bar > .row {
         line-height: 50px;
         padding: 0 !important;
         gap: var(--btnwidth);
+        position: absolute;
+        top: var(--header_board_height);
 
         & a.dropdown-toggle {
             height: 50px;
-            width: 100px;
+            width: fit-content;
+            max-width: 100px;
             display: inline-flex !important;
-            justify-content: center;
+            justify-content: flex-end;
             padding: 0 !important;
             font-size: 0 !important;
             line-height: inherit !important;
@@ -338,10 +355,6 @@ header #header-bar > .row {
                 font-weight: 500;
                 white-space: nowrap;
                 font-size: 14px;
-            }
-
-            &[href="/note/lists"]::before {
-                content: "내 쪽지함 " !important;
             }
 
             &#userDropdown {
@@ -367,51 +380,48 @@ header #header-bar > .row {
     }
 }
 
-/* 상단 검색바 */
-header #right-search-form {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: calc(150px + 5px + 20px);
-    height: 50px;
-    padding: 0 !important;
+/* 상단 검색 영역 */
+header .row > div.col-xs-8 {
+    text-align: left;
 
-    & #right-search-input {
-        width: 0;
-        height: 30px;
-        padding: 0;
-        margin-right: 5px;
-        background: none;
-        border: none;
-        color: #fff;
-        opacity: 0;
-        font-weight: 600;
-        letter-spacing: -0.02em;
-        text-align: right;
-        line-height: initial;
-        transition: width 0.3s 0.05s ease-out, opacity 0.4s ease-in-out;
+    #right-search-form {
+        --inputwidth: calc(16em + 1em);
+        width: var(--inputwidth);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(calc(-1100px * 0.3333333333 - 15px + calc(1100px - var(--inputwidth)) / 2));
 
-        &::placeholder {
-            color: rgba(255, 255, 255, 60%) !important;
-        }
-    }
+        padding: 0 !important;
+        height: 50px;
 
-    & #right-search-btn {
-        width: 20px;
-        height: 20px;
-        padding: 0;
-
-        > i {
-            display: block;
-            font-size: 20px !important;
+        & #right-search-input {
+            flex: 1;
+            min-width: 0;
+            background-color: transparent;
+            border: 1px solid hsl(0 0% 100% / 25%);
+            height: 30px;
+            text-align: center;
             color: #fff;
-        }
-    }
+            padding: 0 0.5em;
 
-    &:hover > #right-search-input,
-    & > #right-search-input:focus {
-        width: 150px;
-        opacity: 1;
+            &::placeholder {
+                color: #fff !important;
+                opacity: 0.75;
+            }
+        }
+
+        & > #right-search-input:focus {
+            border: 1px solid hsl(0 0% 100% / 75%);
+
+            &:not(:placeholder-shown) {
+                border: 1px solid YellowGreen;
+            }
+        }
+
+        & #right-search-btn {
+            display: none;
+        }
     }
 }
 
@@ -606,7 +616,6 @@ html.darkmode #main-menu div[align="center"][style="background:#fff;padding:10px
             display: flex;
             align-items: center;
             line-height: initial;
-            padding-right: 5px;
         }
     }
 
@@ -1597,7 +1606,7 @@ footer {
     column-gap: 10px;
     margin-top: 4em;
     padding: 30px 0;
-    background: var(--color-sigk);
+    background: hsl(var(--color-sigk));
 
     & .container {
         grid-row: 3 / 4;
@@ -1765,21 +1774,5 @@ footer {
         letter-spacing: -0.04em;
         white-space: pre;
         color: #b3b3b3;
-    }
-}
-
-/* 위로가기 버튼 */
-#movetotop {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    opacity: 0.8;
-    margin: 2em;
-
-    & img {
-        content: url(https://cdn.discordapp.com/attachments/936953394415935568/1034081132767092759/up.svg);
-        width: 60px;
-        filter: brightness(100) drop-shadow(3px 3px 2px rgb(0 0 0 / 50%));
-        float: right;
     }
 }
