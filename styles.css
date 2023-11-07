@@ -551,9 +551,9 @@ html.darkmode #article-list > div:nth-child(3):not(#article-list > .article-list
 }
 
 /* 게시글 내부 광고 */
-#main-content > div > div:nth-child(2):not(#article-list, #board-profile) {
+#main-content > div > div[style="padding:0em 1em;"]:not(#article-list, #board-profile) {
     background: var(--color-noti) !important;
-    padding: 10px 8px !important;
+    padding: 10px !important;
 
     > div:not(#article-list-category, .article-list-table-gallery, #article-list-menu) {
         background: var(--color-noti) !important;
