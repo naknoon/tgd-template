@@ -177,7 +177,7 @@ header .row {
             --logo-pd: var(--logo-pd-v) var(--logo-pd-h) var(--logo-pd-v) 0;
 
             & img {
-                content: url(https://cdn.discordapp.com/attachments/901132800793649233/936304107487129610/tgd_ico.png);
+                content: url(https://raw.githubusercontent.com/naknoon/tgd-template/main/src/tgd_ico.png);
                 width: 120px;
                 height: 50px;
                 padding: var(--logo-pd);
